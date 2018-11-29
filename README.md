@@ -4,7 +4,7 @@
 ## Challenge
 ## Approach & Efficiency
 ## Solution
-![White Board to Array Reverse problem](assets/array_reverse.JPG)
+![White Board to Array Reverse problem](/assets/array_reverse.JPG)
 
 # Array Shift
 ## Challenge
@@ -22,4 +22,4 @@ My first solution was to loop through the whole array and check each element aga
 My future approach is to solve the problem using the half-interval search method.
 
 ## Solution
-![White Board to Binary Search problem](/assests/array_binary_search.JPG)
+![White Board to Binary Search problem](/assets/array_binary_search.JPG)
