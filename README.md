@@ -4,7 +4,7 @@
 ## Challenge
 ## Approach & Efficiency
 ## Solution
-![White Board to Array Reverse problem](/assests/array_reverse.JPG)
+![White Board to Array Reverse problem](assests/array_reverse.JPG)
 
 # Array Shift
 ## Challenge
