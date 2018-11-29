@@ -4,13 +4,13 @@
 ## Challenge
 ## Approach & Efficiency
 ## Solution
-![White Board to Array Reverse problem](assests/array_reverse.JPG)
+![White Board to Array Reverse problem](assets/array_reverse.JPG)
 
 # Array Shift
 ## Challenge
 ## Approach & Efficiency
 ## Solution
-![White Board to Array Shift problem](/assests/array_shift.JPG)
+![White Board to Array Shift problem](/assets/array_shift.JPG)
 
 # Binary Search 
 ## Challenge
