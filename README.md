@@ -1,5 +1,11 @@
 # Date-Structures-and-Algorithms
 
+## Week 1
+- Day 1: Array Reverse 
+- Day 2: Array Shift
+- Day 3: Binary Search
+- Day 4: 
+
 # Array Reverse
 ## Challenge
 ## Approach & Efficiency
