@@ -8,6 +8,6 @@ My first solution was to loop through the whole array and check each element aga
 My future approach is to solve the problem using the half-interval search method.
 
 ## Solution
-[Code](../src/main/java/BinarySearch.java) | [Tests](../src/main/test/java/BinarySearchTest.java)
+[Code](../src/main/java/BinarySearch.java) | [Tests](../src/main/test/BinarySearchTest.java)
 
 ![White Board to Binary Search problem](../assets/array_binary_search.JPG)

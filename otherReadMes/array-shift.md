@@ -8,5 +8,5 @@ Divide the length of the array by two and round up to the nearest whole number (
 This loops through the array one time. Time and space will have a linear effect on the computer. 
 
 ## Solution
-[Code](../src/main/java/ArrayShift.java) | [Tests](../src/main/test/java/ArrayShiftTest.java)
+[Code](../src/main/java/ArrayShift.java) | [Tests](../src/main/test/ArrayShiftTest.java)
 ![White Board to Array Shift problem](../assets/array_shift.JPG)
