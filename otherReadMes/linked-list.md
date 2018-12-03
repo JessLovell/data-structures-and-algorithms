@@ -1,4 +1,6 @@
 # Linked List
+[Code](../src/main/java/LinkedList) | [Tests](../src/test/java/LinkedList/LinkedListTest.java)
+
 ## The Challenge
 Create a Node class that contains data and a pointer to the next Node. Create a Linked List class, an empty linked list
 should be created upon instantiation.
