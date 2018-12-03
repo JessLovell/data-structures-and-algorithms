@@ -11,5 +11,9 @@ public class BinarySearchTest {
         assertEquals(-1, BinarySearch.BinarySearch(second, 12));
         assertEquals(-1, BinarySearch.BinarySearch(third, 3));
 
+        assertEquals(6, BinarySearch.OptimizedBS(first, 101));
+        assertEquals(-1, BinarySearch.OptimizedBS(second, 12));
+        assertEquals(-1, BinarySearch.OptimizedBS(third, 3));
+
     }
 }
