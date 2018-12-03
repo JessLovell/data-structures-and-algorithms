@@ -1,5 +1,7 @@
 package LinkedList;
 
+import java.util.ArrayList;
+
 public class LinkedList {
     private Node head;
 
@@ -35,15 +37,19 @@ public class LinkedList {
     }
 
     // this method will print the entire contents of the linked list
-    public void print(){
+    public ArrayList<Integer> print(){
 
         //find head
         Node current = this.head;
 
+        ArrayList<Integer> printArr = new ArrayList<>();
+
         //output all values of the list
         while (current != null) {
-            System.out.println(current.data);
+            printArr.add(current.data);
             current = current.next;
         }
+        System.out.println(printArr.toString());
+        return printArr;
     }
 }

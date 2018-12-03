@@ -4,6 +4,14 @@ Create a Node class that contains data and a pointer to the next Node. Create a 
 should be created upon instantiation.
 
 ## Approach & Efficiency
+My approach for this project was to create a Node class and a LinkedList Class and then create methods .insert,
+.includes, .print.
+Method | Time | Space
+---- | ---- | ----
+.insert(int value) | O(1) | O(1)
+.includes(int value) | O(log (n)) | O(1)
+.print(int value) | O(log(n)) | O(n)
+
 
 ## API
 Method | Description
