@@ -37,19 +37,62 @@ public class LinkedList {
     }
 
     // this method will print the entire contents of the linked list
-    public ArrayList<Integer> print(){
+    public void print(){
 
         //find head
         Node current = this.head;
 
-        ArrayList<Integer> printArr = new ArrayList<>();
-
         //output all values of the list
         while (current != null) {
-            printArr.add(current.data);
+            System.out.print(current.data + " ");
             current = current.next;
         }
-        System.out.println(printArr.toString());
-        return printArr;
+        System.out.println();
+    }
+
+    // this method takes in a value and inserts it at the end of the list
+    public void append(int value) {
+
+        Node current = this.head;
+
+        while (current != null) {
+            if (current.next == null) {
+                Node newNode = new Node(value, current.next);
+                current.next = newNode;
+                break;
+            } else {
+                current = current.next;
+            }
+        }
+    }
+
+    //This method takes in a value to insert before a specific value in the list
+    public void insertBefore(int targetValue, int newValue){
+        Node current = this.head;
+
+        while (current != null){
+            if ((current.next).data == targetValue){
+                Node newNode = new Node(newValue, current.next);
+                current.next = newNode;
+                break;
+            } else {
+                current = current.next;
+            }
+        }
+    }
+
+    // this method takes in a value to insert after a specific value in the list
+    public void insertAfter(int targetValue, int newValue) {
+        Node current = this.head;
+
+        while (current != null){
+            if (current.data == targetValue){
+                Node newNode = new Node(newValue, current.next);
+                current.next = newNode;
+                break;
+            } else {
+                current = current.next;
+            }
+        }
     }
 }

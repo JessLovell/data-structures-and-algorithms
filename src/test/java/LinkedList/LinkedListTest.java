@@ -12,6 +12,24 @@ import static org.junit.Assert.*;
 
 public class LinkedListTest {
 
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
+    private final PrintStream originalErr = System.err;
+
+    @Before
+    public void setUpStreams() {
+        System.setOut(new PrintStream(outContent));
+        System.setErr(new PrintStream(errContent));
+    }
+
+    @After
+    public void restoreStreams() {
+        System.setOut(originalOut);
+        System.setErr(originalErr);
+    }
+
+    @Test
     public void testInsert() {
 
         LinkedList oneList  = new LinkedList();
@@ -59,39 +77,75 @@ public class LinkedListTest {
     @Test
     public void testPrint() {
 
+//        LinkedList oneList  = new LinkedList();
+//        oneList.insert(15);
+//        oneList.insert(12);
+//        oneList.insert(3);
+//
+//        ArrayList<Integer> one  = new ArrayList<>();
+//        one.add(3);
+//        one.add(12);
+//        one.add(15);
+//
+//        LinkedList twoList = new LinkedList();
+//        twoList.insert(0);
+//
+//        ArrayList<Integer> two = new ArrayList<>();
+//        two.add(0);
+//
+//        LinkedList threeList  = new LinkedList();
+//        threeList.insert(2);
+//        threeList.insert(2);
+//        threeList.insert(2);
+//        threeList.insert(2);
+//        threeList.insert(2);
+//
+//        ArrayList<Integer> three = new ArrayList<>();
+//        three.add(2);
+//        three.add(2);
+//        three.add(2);
+//        three.add(2);
+//        three.add(2);
+//
+//
+//        assertEquals(one, oneList.print());
+//        assertEquals(two, twoList.print());
+//        assertEquals(three, threeList.print());
+    }
+
+    @Test public void testAppend() {
+
         LinkedList oneList  = new LinkedList();
-        oneList.insert(15);
+        oneList.insert(10);
         oneList.insert(12);
         oneList.insert(3);
+        oneList.append(162);
 
-        ArrayList<Integer> one  = new ArrayList<>();
-        one.add(3);
-        one.add(12);
-        one.add(15);
+        assertTrue("Expect true for oneList, 162", oneList.includes(162));
+    }
 
-        LinkedList twoList = new LinkedList();
-        twoList.insert(0);
+    @Test public void testInsertBefore() {
 
-        ArrayList<Integer> two = new ArrayList<>();
-        two.add(0);
-
-        LinkedList threeList  = new LinkedList();
-        threeList.insert(2);
-        threeList.insert(2);
-        threeList.insert(2);
-        threeList.insert(2);
-        threeList.insert(2);
-
-        ArrayList<Integer> three = new ArrayList<>();
-        three.add(2);
-        three.add(2);
-        three.add(2);
-        three.add(2);
-        three.add(2);
+        LinkedList oneList  = new LinkedList();
+        oneList.insert(10);
+        oneList.insert(9);
+        oneList.insert(8);
+        oneList.insert(12);
+        oneList.insert(3);
+        oneList.insertBefore(9, 162);
+        oneList.print();
 
 
-        assertEquals(one, oneList.print());
-        assertEquals(two, twoList.print());
-        assertEquals(three, threeList.print());
+    }
+
+    @Test public void testInsertAfter() {
+        LinkedList oneList  = new LinkedList();
+        oneList.insert(10);
+        oneList.insert(9);
+        oneList.insert(8);
+        oneList.insert(12);
+        oneList.insert(3);
+        oneList.insertAfter(9, 162);
+        oneList.print();
     }
 }
