@@ -36,20 +36,22 @@ public class LinkedList {
         return false;
     }
 
+    // this method takes in a value and inserts it at the end of the list
+    public void append(int value) {
+
+    }
+
     // this method will print the entire contents of the linked list
-    public ArrayList<Integer> print(){
+    public void print(){
 
         //find head
         Node current = this.head;
 
-        ArrayList<Integer> printArr = new ArrayList<>();
-
         //output all values of the list
         while (current != null) {
-            printArr.add(current.data);
+            System.out.print(current.data + " ");
             current = current.next;
         }
-        System.out.println(printArr.toString());
-        return printArr;
+        System.out.println();
     }
 }
