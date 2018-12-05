@@ -97,7 +97,7 @@ public class LinkedList {
     }
 
     // this method takes in a value to insert from the end - value position in the list
-    public int insertKFromEnd(int k) {
+    public int kFromEnd(int k) {
 
         Node current = this.head;
         int size = 0;
@@ -108,12 +108,12 @@ public class LinkedList {
 
         int deltaK = size - k;
 
-        if (deltaK <= 0) {
+        if (deltaK <= 0 || k < 0) {
             return -1;
         } else {
             current = this.head;
             for (int i = 0; i < deltaK; i++) {
-                if (i == deltaK -1) {
+                if (i == deltaK - 1) {
                     return current.data;
                 } else {
                     current = current.next;

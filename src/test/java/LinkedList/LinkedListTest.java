@@ -148,4 +148,24 @@ public class LinkedListTest {
         oneList.insertAfter(9, 162);
         oneList.print();
     }
+
+    @Test public void testKFromEnd(){
+        LinkedList oneList  = new LinkedList();
+        oneList.insert(10);
+        oneList.insert(9);
+        oneList.insert(8);
+        oneList.insert(12);
+        oneList.insert(3);
+        oneList.insert(5);
+
+        //test that the kth value is as expected. returns -1 if not in list.
+        assertEquals(10, oneList.kFromEnd(0));
+        assertEquals(9, oneList.kFromEnd(1));
+        assertEquals(8, oneList.kFromEnd(2));
+        assertEquals(12, oneList.kFromEnd(3));
+        assertEquals(3, oneList.kFromEnd(4));
+        assertEquals(5, oneList.kFromEnd(5));
+        assertEquals(-1, oneList.kFromEnd(6));
+        assertEquals(-1, oneList.kFromEnd(-1));
+    }
 }

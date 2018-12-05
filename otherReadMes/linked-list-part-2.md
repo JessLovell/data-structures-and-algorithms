@@ -1,4 +1,4 @@
-# Linked List
+# Linked List Part 2
 
 ## The Challenge
 Write three methods that insert values into a linked list.
