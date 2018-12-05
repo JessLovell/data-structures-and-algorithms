@@ -15,6 +15,7 @@ Method | Time | Space
 `.insert(int value)` | O(1) | O(1)
 `.insertAfter(int targetValue, int newValue)` | O(n) | O(1)
 `.insertBefore(int targetValue, int newValue)` | O(n) | O(1)
+`.kFromEnd(int value)` | O(n) | O(1)
 `.print(int value)` | O(log(n)) | O(n)
 
 
@@ -26,5 +27,6 @@ Method | Description
 `.insert(int value)` | Takes in an integer value as an argument and adds a new node with that value to the head of the list.
 `.insertAfter(int targetValue, int newValue)` | Takes in target value currently in the list and adds a new value after the target value.
 `.insertBefore(int targetValue, int newValue)` | Takes in target value currently in the list and adds a new value before the target value.
+`.kFromEnd(int value)` | Takes in a value and returns the nth value from the end of the list. If it is not in the list, returns -1.
 `.print()` | Does not accept arguments and will output all the current Node Values in the linked list.
 
