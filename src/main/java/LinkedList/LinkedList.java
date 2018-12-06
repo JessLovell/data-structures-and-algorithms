@@ -123,5 +123,33 @@ public class LinkedList {
         return -1;
     }
 
-    public static LinkedList
+    //This method takes in 2 linkedlists and zipper-merges them into linked list One
+    public static LinkedList merge(LinkedList one, LinkedList two) {
+
+        Node oneCurrent = one.head;
+        Node twoCurrent = two.head;
+
+        //Setting placeholders
+        Node oneTemp = oneCurrent.next;
+        Node twoTemp = twoCurrent.next;
+
+        while (oneTemp.next != null && twoTemp.next != null) {
+            oneTemp = oneCurrent.next;
+            twoTemp = twoCurrent.next;
+
+            oneCurrent.next = twoCurrent;
+            twoCurrent.next = oneTemp;
+            oneTemp = oneCurrent;
+            twoTemp = twoCurrent;
+        }
+
+        if (oneCurrent.next == null) {
+            oneCurrent.next = twoCurrent;
+        } else if (twoCurrent == null) {
+            oneCurrent.next = twoCurrent;
+            twoCurrent.next = oneTemp;
+
+        }
+        return one;
+    }
 }
