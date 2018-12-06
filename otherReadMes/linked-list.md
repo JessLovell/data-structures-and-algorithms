@@ -16,6 +16,7 @@ Method | Time | Space
 `.insertAfter(int targetValue, int newValue)` | O(n) | O(1)
 `.insertBefore(int targetValue, int newValue)` | O(n) | O(1)
 `.kFromEnd(int value)` | O(n) | O(1)
+`.merge(LinkedList one, LinkedList two)` | O(n) | O(1)
 `.print(int value)` | O(log(n)) | O(n)
 
 
@@ -28,5 +29,6 @@ Method | Description
 `.insertAfter(int targetValue, int newValue)` | Takes in target value currently in the list and adds a new value after the target value.
 `.insertBefore(int targetValue, int newValue)` | Takes in target value currently in the list and adds a new value before the target value.
 `.kFromEnd(int value)` | Takes in a value and returns the nth value from the end of the list. If it is not in the list, returns -1.
+`.merge` | Takes in 2 linked lists and zipper merges both into one linked list.
 `.print()` | Does not accept arguments and will output all the current Node Values in the linked list.
 

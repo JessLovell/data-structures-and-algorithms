@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import javax.sql.rowset.spi.TransactionalWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -167,5 +168,21 @@ public class LinkedListTest {
         assertEquals(5, oneList.kFromEnd(5));
         assertEquals(-1, oneList.kFromEnd(6));
         assertEquals(-1, oneList.kFromEnd(-1));
+    }
+
+    @Test public void testMerge() {
+
+        LinkedList oneList = new LinkedList();
+        oneList.insert(1);
+        oneList.insert(3);
+        oneList.insert(2);
+
+        LinkedList twoList = new LinkedList();
+        twoList.insert(5);
+        twoList.insert(9);
+        twoList.insert(4);
+
+
+        System.out.println(LinkedList.merge(oneList, twoList));
     }
 }
