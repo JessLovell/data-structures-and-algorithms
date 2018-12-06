@@ -78,40 +78,43 @@ public class LinkedListTest {
     @Test
     public void testPrint() {
 
-//        LinkedList oneList  = new LinkedList();
-//        oneList.insert(15);
-//        oneList.insert(12);
-//        oneList.insert(3);
-//
-//        ArrayList<Integer> one  = new ArrayList<>();
-//        one.add(3);
-//        one.add(12);
-//        one.add(15);
-//
-//        LinkedList twoList = new LinkedList();
-//        twoList.insert(0);
-//
-//        ArrayList<Integer> two = new ArrayList<>();
-//        two.add(0);
-//
-//        LinkedList threeList  = new LinkedList();
-//        threeList.insert(2);
-//        threeList.insert(2);
-//        threeList.insert(2);
-//        threeList.insert(2);
-//        threeList.insert(2);
-//
-//        ArrayList<Integer> three = new ArrayList<>();
-//        three.add(2);
-//        three.add(2);
-//        three.add(2);
-//        three.add(2);
-//        three.add(2);
-//
-//
-//        assertEquals(one, oneList.print());
-//        assertEquals(two, twoList.print());
-//        assertEquals(three, threeList.print());
+        LinkedList oneList  = new LinkedList();
+        oneList.insert(15);
+        oneList.insert(12);
+        oneList.insert(3);
+
+        ArrayList<Integer> one  = new ArrayList<>();
+        one.add(3);
+        one.add(12);
+        one.add(15);
+
+        LinkedList twoList = new LinkedList();
+        twoList.insert(0);
+
+        ArrayList<Integer> two = new ArrayList<>();
+        two.add(0);
+
+        LinkedList threeList  = new LinkedList();
+        threeList.insert(2);
+        threeList.insert(2);
+        threeList.insert(2);
+        threeList.insert(2);
+        threeList.insert(2);
+
+        ArrayList<Integer> three = new ArrayList<>();
+        three.add(2);
+        three.add(2);
+        three.add(2);
+        three.add(2);
+        three.add(2);
+
+
+        oneList.print();
+        twoList.print();
+        threeList.print();
+        assertEquals("3 12 15 \n" +
+                "0 \n" +
+                "2 2 2 2 2 \n", outContent.toString());
     }
 
     @Test public void testAppend() {
