@@ -122,4 +122,6 @@ public class LinkedList {
         }
         return -1;
     }
+
+    public static LinkedList
 }
