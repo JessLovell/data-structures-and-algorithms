@@ -1,30 +1,30 @@
 package StacksAndQueues;
 
-public class Stack {
+public class Stack<T> {
 
-    protected Node top;
+    protected Node<T> top;
 
     public Stack(){
         this.top = null;
     }
 
     //define a method push adds a new node to the top of the stack
-    public void push(Integer value){
+    public void push(T value){
 
-        Node newNode = new Node(value, this.top);
+        Node<T> newNode = new Node(value, this.top);
         this.top = newNode;
     }
 
     //define a method pop removes the node from the top of the stack and returns it
-    public Node pop(){
+    public T pop(){
 
-        Node temp = this.top;
+        Node<T> temp = this.top;
         this.top = temp.next;
-        return temp;
+        return temp.data;
     }
 
     //this method peek returns the node located at the top of the stack
-    public Node peek(){
+    public Node<T> peek(){
         return this.top;
     }
 
@@ -38,7 +38,4 @@ public class Stack {
         }
         System.out.println();
     }
-
-
-
 }
