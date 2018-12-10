@@ -16,16 +16,25 @@ public class Stack<T> {
     }
 
     //define a method pop removes the node from the top of the stack and returns it
-    public T pop(){
+    public T pop() {
 
-        Node<T> temp = this.top;
-        this.top = temp.next;
-        return temp.data;
+        if (this.top != null) {
+            Node<T> temp = this.top;
+            this.top = temp.next;
+            return temp.data;
+        } else {
+            return null;
+        }
     }
 
     //this method peek returns the node located at the top of the stack
     public Node<T> peek(){
-        return this.top;
+
+        if (this.top == null) {
+            return null;
+        } else{
+            return this.top;
+        }
     }
 
     public void print() {
