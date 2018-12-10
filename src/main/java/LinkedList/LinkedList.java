@@ -59,7 +59,7 @@ public class LinkedList {
             if (current.next == null) {
                 Node newNode = new Node(value, current.next);
                 current.next = newNode;
-                break;
+                return;
             } else {
                 current = current.next;
             }
