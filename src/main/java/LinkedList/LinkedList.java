@@ -74,7 +74,7 @@ public class LinkedList {
             if ((current.next).data == targetValue){
                 Node newNode = new Node(newValue, current.next);
                 current.next = newNode;
-                break;
+                return;
             } else {
                 current = current.next;
             }
@@ -89,7 +89,7 @@ public class LinkedList {
             if (current.data == targetValue){
                 Node newNode = new Node(newValue, current.next);
                 current.next = newNode;
-                break;
+                return;
             } else {
                 current = current.next;
             }

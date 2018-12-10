@@ -124,8 +124,15 @@ public class LinkedListTest {
         oneList.insert(12);
         oneList.insert(3);
         oneList.append(162);
+        oneList.append(127);
+        oneList.append(137);
 
         assertTrue("Expect true for oneList, 162", oneList.includes(162));
+        assertTrue("Expect true for oneList, 127", oneList.includes(127));
+        assertTrue("Expect true for oneList, 137", oneList.includes(137));
+        assertTrue("Expect true for oneList, 10", oneList.includes(10));
+        assertTrue("Expect true for oneList, 12", oneList.includes(12));
+        assertTrue("Expect true for oneList, 3", oneList.includes(3));
     }
 
     @Test public void testInsertBefore() {
@@ -139,10 +146,11 @@ public class LinkedListTest {
         oneList.insertBefore(9, 162);
         oneList.print();
 
-
+        assertEquals("expect 162 to be inserted before 9","3 12 8 162 9 10 \n", outContent.toString());
     }
 
     @Test public void testInsertAfter() {
+
         LinkedList oneList  = new LinkedList();
         oneList.insert(10);
         oneList.insert(9);
@@ -151,9 +159,11 @@ public class LinkedListTest {
         oneList.insert(3);
         oneList.insertAfter(9, 162);
         oneList.print();
+        assertEquals("expect 162 to be inserted after 9","3 12 8 9 162 10 \n", outContent.toString());
     }
 
     @Test public void testKFromEnd(){
+
         LinkedList oneList  = new LinkedList();
         oneList.insert(10);
         oneList.insert(9);
@@ -173,19 +183,19 @@ public class LinkedListTest {
         assertEquals(-1, oneList.kFromEnd(-1));
     }
 
-    @Test public void testMerge() {
-
-        LinkedList oneList = new LinkedList();
-        oneList.insert(1);
-        oneList.insert(3);
-        oneList.insert(2);
-
-        LinkedList twoList = new LinkedList();
-        twoList.insert(5);
-        twoList.insert(9);
-        twoList.insert(4);
-
-
-        System.out.println(LinkedList.merge(oneList, twoList));
-    }
+//    @Test public void testMerge() {
+//
+//        LinkedList oneList = new LinkedList();
+//        oneList.insert(1);
+//        oneList.insert(3);
+//        oneList.insert(2);
+//
+//        LinkedList twoList = new LinkedList();
+//        twoList.insert(5);
+//        twoList.insert(9);
+//        twoList.insert(4);
+//
+//
+//        System.out.println(LinkedList.merge(oneList, twoList));
+//    }
 }
