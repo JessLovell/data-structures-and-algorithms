@@ -13,37 +13,30 @@ public class Queue<T> {
     //This method adds a node to the end of the queue
     public void enqueue(T value) {
 
-        Node newNode = new Node(value, this.end);
-        if (this.front == end) {
+        Node newNode = new Node(value, null);
+        if (this.front == null ) {
+            this.front = newNode;
             this.end = newNode;
-            System.out.println(this.end.data);
         } else {
-
+            this.end.next = newNode;
+            this.end = this.end.next;
         }
     }
 
     //This method removes a node at the front of the queue
     public T dequeue(){
 
-        Node<T> temp = this.front;
-        this.front = temp.next;
-        return temp.data;
+        if (this.front != null) {
+            Node<T> temp = this.front;
+            this.front= temp.next;
+            return temp.data;
+        } else {
+          return null;
+        }
     }
 
     //This method returns the value at the front of the queue
     public Node peek(){
         return this.front;
-    }
-
-    //this method outputs the queue to the CLI
-    public void print() {
-        Node current = this.front;
-
-        //output all values of the list
-        while (current != null) {
-            System.out.print(current.data + " ");
-            current = current.next;
-        }
-        System.out.println();
     }
 }

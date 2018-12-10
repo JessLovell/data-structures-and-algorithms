@@ -63,7 +63,7 @@ public class StackTest {
         assertTrue("expect top to be null", stack.top == null);
         assertTrue("Expect pop to return null", stack.pop() == null);
     }
-    
+
     @Test public void testPeek() {
         Stack stack = new Stack();
         assertTrue("expect top to be null", stack.top == null);
