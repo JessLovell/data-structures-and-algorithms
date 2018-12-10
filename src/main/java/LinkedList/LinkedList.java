@@ -130,11 +130,18 @@ public class LinkedList {
         Node twoCurrent = two.head;
 
         //Setting placeholders
-        Node oneTemp = oneCurrent.next;
-        Node twoTemp = twoCurrent.next;
+        Node oneTemp = one.head.next;
+        Node twoTemp = two.head.next;
+        Node placeholder = null;
 
-        while (oneTemp.next != null && twoTemp.next != null) {
-            oneTemp = oneCurrent.next;
+        while (oneTemp != null || twoTemp != null) {
+
+            if (oneTemp != null) {
+                placeholder.next = oneTemp.next;
+                oneCurrent.next = ;
+                oneTemp = oneCurrent.next;
+            }
+
             twoTemp = twoCurrent.next;
 
             oneCurrent.next = twoCurrent;
