@@ -10,5 +10,5 @@ Time | Space
 O(n) | O(1)
 
 ## Solution
-[Code]() | [Test]()
+[Code](../src/main/java/StacksAndQueues/PseudoQueue.java) | [Test](../src/test/java/StacksAndQueues/PseudoQueueTest.java)
 ![White board solution to Pseudo Queue](../assets/pseudo_queue.JPG)
