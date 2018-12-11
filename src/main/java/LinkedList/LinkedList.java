@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class LinkedList {
     private Node head;
+    private Node current;
 
     public LinkedList(){
         this.head = null;
@@ -126,37 +127,28 @@ public class LinkedList {
     //This method takes in 2 linkedlists and zipper-merges them into linked list One
     public static LinkedList merge(LinkedList one, LinkedList two) {
 
-        Node oneCurrent = one.head;
-        Node twoCurrent = two.head;
+        Node oneLeader = one.head.next;
+        Node oneFollower = one.head;
+        two.current = two.head;
 
-        //Setting placeholders
-        Node oneTemp = one.head.next;
-        Node twoTemp = two.head.next;
-        Node placeholder = null;
+        while (oneLeader != null) {
 
-        while (oneTemp != null || twoTemp != null) {
-
-            if (oneTemp != null) {
-                placeholder.next = oneTemp.next;
-                oneCurrent.next = ;
-                oneTemp = oneCurrent.next;
+            if (two.current == null) {
+                return one;
             }
 
-            twoTemp = twoCurrent.next;
+            two.head = two.current.next;
+            oneFollower.next = two.current;
+            two.current.next = oneLeader;
 
-            oneCurrent.next = twoCurrent;
-            twoCurrent.next = oneTemp;
-            oneTemp = oneCurrent;
-            twoTemp = twoCurrent;
+            two.current = two.head;
+            oneFollower = oneLeader;
+            oneLeader = oneLeader.next;
         }
 
-        if (oneCurrent.next == null) {
-            oneCurrent.next = twoCurrent;
-        } else if (twoCurrent == null) {
-            oneCurrent.next = twoCurrent;
-            twoCurrent.next = oneTemp;
-
-        }
+        oneFollower.next = two.current;
         return one;
     }
 }
+
+

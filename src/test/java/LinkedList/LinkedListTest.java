@@ -183,19 +183,66 @@ public class LinkedListTest {
         assertEquals(-1, oneList.kFromEnd(-1));
     }
 
-//    @Test public void testMerge() {
-//
-//        LinkedList oneList = new LinkedList();
-//        oneList.insert(1);
-//        oneList.insert(3);
-//        oneList.insert(2);
-//
-//        LinkedList twoList = new LinkedList();
-//        twoList.insert(5);
-//        twoList.insert(9);
-//        twoList.insert(4);
-//
-//
-//        System.out.println(LinkedList.merge(oneList, twoList));
-//    }
+    @Test public void testMergeSame() {
+
+        LinkedList oneList = new LinkedList();
+        oneList.insert(1);
+        oneList.insert(3);
+        oneList.insert(2);
+
+        LinkedList twoList = new LinkedList();
+        twoList.insert(5);
+        twoList.insert(9);
+        twoList.insert(4);
+
+        LinkedList.merge(oneList, twoList).print();
+        assertEquals("2 4 3 9 1 5 \n", outContent.toString());
+    }
+
+    @Test public void testMergeLong() {
+
+        LinkedList oneList = new LinkedList();
+        oneList.insert(1);
+        oneList.insert(3);
+        oneList.insert(2);
+
+
+        LinkedList twoList = new LinkedList();
+        twoList.insert(5);
+        twoList.insert(9);
+        twoList.insert(4);
+        twoList.insert(4);
+        twoList.insert(4);
+        twoList.insert(4);
+        twoList.insert(4);
+        twoList.insert(4);
+        twoList.insert(4);
+        twoList.insert(4);
+
+
+        LinkedList.merge(oneList, twoList).print();
+        assertEquals("2 4 3 4 1 4 4 4 4 4 4 9 5 \n", outContent.toString());
+    }
+    
+    @Test public void testMergeShort() {
+
+        LinkedList oneList = new LinkedList();
+        oneList.insert(1);
+        oneList.insert(3);
+        oneList.insert(2);
+        oneList.insert(2);
+        oneList.insert(2);
+        oneList.insert(2);
+        oneList.insert(2);
+        oneList.insert(2);
+
+        LinkedList twoList = new LinkedList();
+        twoList.insert(5);
+        twoList.insert(9);
+        twoList.insert(4);
+
+        LinkedList.merge(oneList, twoList).print();
+        assertEquals("2 4 2 9 2 5 2 2 2 3 1 \n", outContent.toString());
+    }
+
 }
