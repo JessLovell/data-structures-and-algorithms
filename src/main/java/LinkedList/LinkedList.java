@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class LinkedList {
     private Node head;
+    private Node current;
 
     public LinkedList(){
         this.head = null;
@@ -124,39 +125,30 @@ public class LinkedList {
     }
 
     //This method takes in 2 linkedlists and zipper-merges them into linked list One
-//    public static LinkedList merge(LinkedList one, LinkedList two) {
-//
-//        Node oneCurrent = one.head;
-//        Node twoCurrent = two.head;
-//
-//        //Setting placeholders
-//        Node oneTemp = one.head.next;
-//        Node twoTemp = two.head.next;
-//        Node placeholder = null;
-//
-//        while (oneTemp != null || twoTemp != null) {
-//
-//            if (oneTemp != null) {
-//                placeholder.next = oneTemp.next;
-//                oneCurrent.next = ;
-//                oneTemp = oneCurrent.next;
-//            }
-//
-//            twoTemp = twoCurrent.next;
-//
-//            oneCurrent.next = twoCurrent;
-//            twoCurrent.next = oneTemp;
-//            oneTemp = oneCurrent;
-//            twoTemp = twoCurrent;
-//        }
-//
-//        if (oneCurrent.next == null) {
-//            oneCurrent.next = twoCurrent;
-//        } else if (twoCurrent == null) {
-//            oneCurrent.next = twoCurrent;
-//            twoCurrent.next = oneTemp;
-//
-//        }
-//        return one;
-//    }
+    public static LinkedList merge(LinkedList one, LinkedList two) {
+
+        Node oneLeader = one.head.next;
+        Node oneFollower = one.head;
+        two.current = two.head;
+
+        while (oneLeader != null) {
+
+            if (two.current == null) {
+                return one;
+            }
+
+            two.head = two.current.next;
+            oneFollower.next = two.current;
+            two.current.next = oneLeader;
+
+            two.current = two.head;
+            oneFollower = oneLeader;
+            oneLeader = oneLeader.next;
+        }
+
+        oneFollower.next = two.current;
+        return one;
+    }
 }
+
+
