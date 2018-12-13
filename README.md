@@ -17,3 +17,4 @@ This repo contains my practice and adventures in Data Structures and Algorithms.
 - [Day 9: Stacks and Queues](/otherReadMes/stacks-and-queues.md)
 - [Day 10: Stacks and Queues Part 2](/otherReadMes/stacks-and-queues-part-2.md)
 - [Day 11: Stacks and Queues Part 3](/otherReadMes/stacks-and-queues-part-3.md)
+- [Day 12: Stacks and Queues Part 4](/otherReadMes/stacks-and-queues-part-4.md)
