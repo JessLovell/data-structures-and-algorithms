@@ -31,7 +31,7 @@ public class BinaryTreeTest {
 
     @Test public void testPreOrder() {
 
-        Node<Integer> rootOne = new Node<>(3,
+        Node rootOne = new Node(3,
                 new Node(4,
                         new Node (105,
                                 new Node(36, null, null),
@@ -48,7 +48,7 @@ public class BinaryTreeTest {
         BinaryTree treeOne = new BinaryTree();
         treeOne.root = rootOne;
 
-        Node<Integer> rootTwo = new Node<>(3,
+        Node rootTwo = new Node(3,
                 new Node(1,
                         new Node (2,
                                 new Node(3, null, null),
@@ -64,7 +64,7 @@ public class BinaryTreeTest {
         BinaryTree treeTwo = new BinaryTree();
         treeTwo.root = rootTwo;
 
-        Node<Integer> rootThree = new Node<>(3,
+        Node rootThree = new Node(3,
                 new Node(12,
                         new Node (7,
                                 new Node(6, null, null),
@@ -86,7 +86,7 @@ public class BinaryTreeTest {
     }
 
     @Test public void testInOrder(){
-        Node<Integer> rootOne = new Node<>(3,
+        Node rootOne = new Node(3,
                 new Node(4,
                         new Node (105,
                                 new Node(36, null, null),
@@ -103,7 +103,7 @@ public class BinaryTreeTest {
         BinaryTree treeOne = new BinaryTree();
         treeOne.root = rootOne;
 
-        Node<Integer> rootTwo = new Node<>(3,
+        Node rootTwo = new Node(3,
                 new Node(1,
                         new Node (2,
                                 new Node(3, null, null),
@@ -119,7 +119,7 @@ public class BinaryTreeTest {
         BinaryTree treeTwo = new BinaryTree();
         treeTwo.root = rootTwo;
 
-        Node<Integer> rootThree = new Node<>(3,
+        Node rootThree = new Node(3,
                 new Node(12,
                         new Node (7,
                                 new Node(6, null, null),
@@ -141,7 +141,7 @@ public class BinaryTreeTest {
     }
 
     @Test public void testPostOrder() {
-        Node<Integer> rootOne = new Node<>(3,
+        Node rootOne = new Node(3,
                 new Node(4,
                         new Node (105,
                                 new Node(36, null, null),
@@ -158,7 +158,7 @@ public class BinaryTreeTest {
         BinaryTree treeOne = new BinaryTree();
         treeOne.root = rootOne;
 
-        Node<Integer> rootTwo = new Node<>(3,
+        Node rootTwo = new Node (3,
                 new Node(1,
                         new Node (2,
                                 new Node(3, null, null),
@@ -174,7 +174,7 @@ public class BinaryTreeTest {
         BinaryTree treeTwo = new BinaryTree();
         treeTwo.root = rootTwo;
 
-        Node<Integer> rootThree = new Node<>(3,
+        Node rootThree = new Node(3,
                 new Node(12,
                         new Node (7,
                                 new Node(6, null, null),
