@@ -11,34 +11,60 @@ public class BinaryTree<T> {
     }
 
 
-    // This method will pre-order the binary tree by root, left, then right.
-    public List<T> preOrder(){
+    //This method determines if the list should be pre-ordered, in-order, or post-order.
+    public List<T> order(String order){
 
         List<T> list = new ArrayList<>();
-        preOrderHelper(list, this.root);
+        if (order.toLowerCase().equals("pre")){
+            list = preOrder(list, this.root);
+        } else if (order.toLowerCase().equals("in")){
+            list = inOrder(list, this.root);
+        } else if (order.toLowerCase().equals("post")) {
+            list = postOrder(list, this.root);
+        } else {
+            return null;
+        }
         return list;
     }
-     //This method fills in the list.
-    public List<T> preOrderHelper(List<T> list, Node<T> node) {
+     //This method pre-orders the tree by root, left, right.
+    private List<T> preOrder(List<T> list, Node<T> node) {
 
         list.add(node.data);
 
         if (node.leftChild != null){
-            preOrderHelper(list, node.leftChild);
+            preOrder(list, node.leftChild);
         }
         if (node.rightChild != null){
-            preOrderHelper(list, node.rightChild);
+            preOrder(list, node.rightChild);
         }
          return list;
     }
 
+    //This method will order the tree in-order of left, root, right.
+    private List<T> inOrder(List<T> list, Node<T> node) {
 
+        if (node.leftChild != null){
+            inOrder(list, node.leftChild);
+        }
+        list.add(node.data);
 
-    public T[] inOrder() {
-        return null;
+        if (node.rightChild != null){
+            inOrder(list, node.rightChild);
+        }
+        return list;
     }
 
-    public T[] postOrder() {
-        return null;
+    //This method will orfer the tree post-order by left, right, root.
+    private List<T> postOrder(List<T> list, Node<T> node) {
+
+        if (node.leftChild != null){
+            postOrder(list, node.leftChild);
+        }
+        if (node.rightChild != null){
+            postOrder(list, node.rightChild);
+        }
+
+        list.add(node.data);
+        return list;
     }
 }
