@@ -10,4 +10,8 @@ public class Node<T> {
         this.leftChild = leftChild;
         this.rightChild = rightChild;
     }
+
+    public String toString(){
+        return (String)this.data;
+    }
 }
