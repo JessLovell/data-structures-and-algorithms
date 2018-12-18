@@ -1,12 +1,12 @@
 # Linked List
-[Code](../src/main/java/LinkedList) | [Tests](../src/test/java/LinkedList/LinkedListTest.java)
+[Code](../src/main/java/linkedList) | [Tests](../src/test/java/linkedList/LinkedListTest.java)
 
 ## The Challenge
 Create a Node class that contains data and a pointer to the next Node. Create a Linked List class, an empty linked list
 should be created upon instantiation.
 
 ## Approach & Efficiency
-My approach for this project was to create a Node class and a LinkedList Class and then create methods .insert, .includes, .print.
+My approach for this project was to create a Node class and a linkedList Class and then create methods .insert, .includes, .print.
 
 Method | Time | Space
 ---- | ---- | ----
@@ -16,7 +16,7 @@ Method | Time | Space
 `.insertAfter(int targetValue, int newValue)` | O(n) | O(1)
 `.insertBefore(int targetValue, int newValue)` | O(n) | O(1)
 `.kFromEnd(int value)` | O(n) | O(1)
-`.merge(LinkedList one, LinkedList two)` | O(n) | O(1)
+`.merge(linkedList one, linkedList two)` | O(n) | O(1)
 `.print(int value)` | O(log(n)) | O(n)
 
 

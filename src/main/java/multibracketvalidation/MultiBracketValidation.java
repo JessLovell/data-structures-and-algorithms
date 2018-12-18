@@ -1,6 +1,6 @@
 package multibracketvalidation;
 
-import StacksAndQueues.Stack;
+import stacksAndQueues.Stack;
 
 public class MultiBracketValidation {
 

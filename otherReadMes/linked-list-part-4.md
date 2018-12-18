@@ -8,9 +8,9 @@ My approach for this was to create a method and using place holders, traverse th
 
 Method | Time | Space
 ---- | ---- | ----
-`.merge(LinkedList one, LinkedList two)` | O(n) | O(1)
+`.merge(linkedList one, linkedList two)` | O(n) | O(1)
 
 ## Solution
-[Code](../src/main/java/LinkedList) | [Tests](../src/test/java/LinkedList/LinkedListTest.java)
+[Code](../src/main/java/linkedList) | [Tests](../src/test/java/linkedList/LinkedListTest.java)
 ![Whiteboard Solution to Merge Method](../assets/linked_list_merge.JPG)
 ![Whiteboard Solution to Merge Method Code](../assets/linked_list_merge_code.JPG)

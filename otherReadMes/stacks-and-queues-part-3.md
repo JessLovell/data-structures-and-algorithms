@@ -12,5 +12,5 @@ My original approach was to make a pseudo queue because I wanted to be able to r
 |O(n)  | O(1)   |    
 
 ## Solution
-[Code](../src/main/java/StacksAndQueues/AnimalShelter.java) | [Tests](../src/test/java/StacksAndQueues/AnimalShelterTest.java)
+[Code](../src/main/java/stacksAndQueues/AnimalShelter.java) | [Tests](../src/test/java/stacksAndQueues/AnimalShelterTest.java)
 ![Whiteboard of Animal Shelter Solution](../assets/stacks_animal_shelter.JPG)

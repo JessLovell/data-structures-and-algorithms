@@ -1,4 +1,4 @@
-package StacksAndQueues;
+package stacksAndQueues;
 
 import org.junit.After;
 import org.junit.Before;

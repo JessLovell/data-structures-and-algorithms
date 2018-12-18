@@ -1,6 +1,6 @@
-package LinkedList;
+package linkedList;
 
-// This is an inner-class and creates the Nodes for the LinkedList class
+// This is an inner-class and creates the Nodes for the linkedList class
 public class Node{
     public int data;
     public Node next;
