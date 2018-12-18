@@ -1,10 +1,9 @@
-package LinkedList;
+package linkedList;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.sql.rowset.spi.TransactionalWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;

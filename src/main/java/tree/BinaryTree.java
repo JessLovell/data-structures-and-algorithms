@@ -1,10 +1,10 @@
-package Tree;
+package tree;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BinaryTree<T> {
-    protected Node root;
+    public Node root;
 
     public BinaryTree(){
         this.root = null;

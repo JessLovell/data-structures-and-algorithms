@@ -1,5 +1,5 @@
 # Trees
-[Code](../src/main/java/Tree) | [Tests](../src/test/java/Tree)
+[Code](../src/main/java/tree) | [Tests](../src/test/java/tree)
 
 ## The Challenge
 1. Create a Node class that has properties for the value stored in the node, the left child node, and the right child node .

@@ -14,5 +14,5 @@ Method | Time | Space
 
 
 ## Solution
-[Code](../src/main/java/LinkedList) | [Tests](../src/test/java/LinkedList/LinkedListTest.java)
+[Code](../src/main/java/linkedList) | [Tests](../src/test/java/linkedList/LinkedListTest.java)
 ![Linked List kth from end Whiteboard](../assets/linked_list_k_from_end.JPG)

@@ -1,4 +1,4 @@
-package StacksAndQueues;
+package stacksAndQueues;
 
 public class Node<T> {
 
