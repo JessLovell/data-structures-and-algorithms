@@ -1,5 +1,7 @@
 package tree;
 
+import stacksAndQueues.Queue;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,7 +56,7 @@ public class BinaryTree<T> {
         return list;
     }
 
-    //This method will orfer the tree post-order by left, right, root.
+    //This method will order the tree post-order by left, right, root.
     private List postOrder(List list, Node node) {
 
         if (node.leftChild != null){
@@ -66,5 +68,28 @@ public class BinaryTree<T> {
 
         list.add(node.data);
         return list;
+    }
+
+    //this method will print out the tree in a breadth first approach
+    public void breadthFirst() {
+        if (this.root != null){
+            Queue<Node> q = new Queue();
+            q.enqueue(this.root);
+
+            while (q.peek() != null){
+
+                Node front = q.dequeue();
+                System.out.print(front.data + " ");
+
+                if (front.leftChild != null){
+                    q.enqueue(front.leftChild);
+                }
+                if (front.rightChild != null){
+                    q.enqueue(front.rightChild);
+                }
+            }
+        } else {
+            System.out.println("Root is bad");
+        }
     }
 }
