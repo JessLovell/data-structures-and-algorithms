@@ -1,10 +1,32 @@
 package tree;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 import static org.junit.Assert.*;
 
 public class BinaryTreeTest {
+
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
+    private final PrintStream originalErr = System.err;
+
+    @Before
+    public void setUpStreams() {
+        System.setOut(new PrintStream(outContent));
+        System.setErr(new PrintStream(errContent));
+    }
+
+    @After
+    public void restoreStreams() {
+        System.setOut(originalOut);
+        System.setErr(originalErr);
+    }
 
     @Test public void testBinaryTree() {
 
@@ -193,5 +215,50 @@ public class BinaryTreeTest {
         assertEquals("Expect lists to equal","[36, 75, 105, 1, 7, 88, 4, 13, 8, 12, 33, 10, 3]", treeOne.order("post").toString());
         assertEquals("Expect lists to equal","[3, 4, 2, 6, 7, 5, 1, 9, 11, 12, 10, 8, 3]", treeTwo.order("post").toString());
         assertEquals("Expect lists to equal","[6, 5, 7, 4, 3, 8, 12, 9, 2, 1, 10, 11, 3]", treeThree.order("post").toString());
+    }
+
+
+    @Test public void testOneBreadthFirst() {
+
+        Node rootOne = new Node(3,
+                new Node(4,
+                        new Node (105,
+                                new Node(36, null, null),
+                                new Node (75, null, null)),
+                        new Node (88,
+                                new Node(1, null, null),
+                                new Node (7, null, null))),
+                new Node(10,
+                        new Node(13, null, null),
+                        new Node(33,
+                                new Node (8, null, null),
+                                new Node(12, null, null))));
+
+        BinaryTree treeOne = new BinaryTree();
+        treeOne.root = rootOne;
+
+        treeOne.breadthFirst();
+
+
+        assertEquals("Expect to output breadth first tree","3 4 10 105 88 13 33 36 75 1 7 8 12 ", outContent.toString());
+    }
+
+    @Test public void testNullBreadthFirst() {
+
+        Node rootOne = new Node(3, null, null);
+
+        BinaryTree treeOne = new BinaryTree();
+        treeOne.root = rootOne;
+
+        treeOne.breadthFirst();
+        assertEquals("Expect 3 to be the only thing in tree","3 ", outContent.toString());
+    }
+
+    @Test public void testThreeBreadthFirst() {
+
+        BinaryTree treeOne = new BinaryTree();
+        treeOne.breadthFirst();
+
+        assertEquals("expect to be null","Root is bad\n", outContent.toString());
     }
 }

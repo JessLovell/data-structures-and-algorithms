@@ -2,7 +2,7 @@ package stacksAndQueues;
 
 public class Queue<T> {
 
-    protected Node<T> front;
+    public Node<T> front;
     protected Node<T> end;
 
     public Queue(){
