@@ -92,4 +92,23 @@ public class BinaryTree<T> {
             System.out.println("Root is bad");
         }
     }
+
+    public static int findMax(Node n){
+
+        if (n == null){
+            return 0;
+        }
+
+        int max = (int) n.data;
+        int leftMax = findMax(n.leftChild);
+        int rightMax = findMax(n.rightChild);
+
+        if (leftMax > max){
+            max = leftMax;
+        }
+        if (rightMax > max){
+            max = rightMax;
+        }
+        return max;
+    }
 }
