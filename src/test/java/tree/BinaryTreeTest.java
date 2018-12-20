@@ -261,4 +261,63 @@ public class BinaryTreeTest {
 
         assertEquals("expect to be null","Root is bad\n", outContent.toString());
     }
+
+    @Test public void testFindMax(){
+
+        Node rootThree = new Node(3,
+                new Node(12,
+                        new Node (7,
+                                new Node(6, null, null),
+                                new Node (5, null, null)),
+                        new Node (8,
+                                new Node(4, null, null),
+                                new Node (3, null, null))),
+                new Node(11,
+                        new Node(9, null, null),
+                        new Node(10,
+                                new Node (2, null, null),
+                                new Node(1, null, null))));
+
+        Node rootOne = new Node(3,
+                new Node(12,
+                        new Node (7,
+                                new Node(6, null, null),
+                                new Node (5, null, null)),
+                        new Node (8,
+                                new Node(4, null, null),
+                                new Node (1000000, null, null))),
+                new Node(11,
+                        new Node(9, null, null),
+                        new Node(10,
+                                new Node (2, null, null),
+                                new Node(1, null, null))));
+
+        assertEquals(12, BinaryTree.findMax(rootThree));
+        assertEquals(1000000, BinaryTree.findMax(rootOne));
+    }
+
+    @Test public void testFindMaxNull(){
+
+        BinaryTree tree = new BinaryTree();
+
+        assertEquals("expect to be 0 b/c null root", 0, BinaryTree.findMax(tree.root));
+    }
+
+    @Test public void testFindMaxOne(){
+        Node rootThree = new Node(12,
+                new Node(3,
+                        new Node (7,
+                                new Node(6, null, null),
+                                new Node (5, null, null)),
+                        new Node (8,
+                                new Node(4, null, null),
+                                new Node (3, null, null))),
+                new Node(11,
+                        new Node(9, null, null),
+                        new Node(10,
+                                new Node (2, null, null),
+                                new Node(1, null, null))));
+
+        assertEquals("expect to be 12", 12, BinaryTree.findMax(rootThree));
+    }
 }
