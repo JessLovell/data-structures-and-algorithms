@@ -23,3 +23,4 @@ This repo contains my practice and adventures in Data Structures and Algorithms.
 - [Day 13: Trees](/otherReadMes/trees.md)
 - [Day 14: Trees Part 2](/otherReadMes/trees-part-2.md)
 - [Day 15: Trees Part 3](/otherReadMes/trees-part-3.md)
+- [Day 16: Trees Part 4](/otherReadMes/trees-part-4.md)
