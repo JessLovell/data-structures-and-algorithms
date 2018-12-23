@@ -41,8 +41,18 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree {
     }
 
     //this method takes a value and returns the node with that value.
-    public Node search() {
+    public Node<T> search(T value, Node<T> node) {
 
-        return null;
+
+        if (value == node.data){
+            return node;
+        }
+
+        if (value.compareTo(node.data) < 0) {
+            return search(value, node.leftChild);
+        }
+        else {
+            return search(value, node.rightChild);
+        }
     }
 }
