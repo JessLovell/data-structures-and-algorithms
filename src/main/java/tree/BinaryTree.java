@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BinaryTree<T> {
-    public Node root;
+    public Node<T> root;
 
     public BinaryTree(){
         this.root = null;
@@ -29,7 +29,7 @@ public class BinaryTree<T> {
         return list;
     }
      //This method pre-orders the tree by root, left, right.
-    private List preOrder(List list, Node node) {
+    private List preOrder(List<T> list, Node<T> node) {
 
         list.add(node.data);
 
@@ -43,7 +43,7 @@ public class BinaryTree<T> {
     }
 
     //This method will order the tree in-order of left, root, right.
-    private List inOrder(List list, Node node) {
+    private List inOrder(List<T> list, Node<T> node) {
 
         if (node.leftChild != null){
             inOrder(list, node.leftChild);
@@ -57,7 +57,7 @@ public class BinaryTree<T> {
     }
 
     //This method will order the tree post-order by left, right, root.
-    private List postOrder(List list, Node node) {
+    private List postOrder(List<T> list, Node<T> node) {
 
         if (node.leftChild != null){
             postOrder(list, node.leftChild);
