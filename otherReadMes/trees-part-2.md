@@ -12,7 +12,7 @@ My approach was to traverse the tree recursively, and change each node according
 
 Memory | Time
 --- | ----
-`O(1)` | `O(log(n))`
+`O(n)` | `O(n)`
 
 ## Solution
 [Code](../src/main/java/fizzBuzzTree/FizzBuzzTree.java) | [Tests](../src/test/java/fizzBuzzTree/FizzBuzzTreeTest.java)

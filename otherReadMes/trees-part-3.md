@@ -7,7 +7,7 @@ My approach for this was to traverse the tree and for each node. Add the node to
 
 Time | Space
 ---- | ------
-`O(n)` | `O(1)`
+`O(n)` | `O(n)`
 
 ## Solution
 [Code](../src/main/java/tree/BinaryTree.java) | [Tests](../src/test/java/tree/BinaryTreeTest.java)
