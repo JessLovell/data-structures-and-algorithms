@@ -14,22 +14,18 @@
 ## Approach & Efficiency
 My approach to solving this problem was to create an `.order()` method to direct which helper method would recurse the tree. In the recursion process, the node value would be added to a linked list and the linked list would be returned at the end.
 
-Time | Space
----- | ----
-O(n) | O(n)
-
 ## API
 ### BinaryTree Class
-Method | Description
------- | -----------
-`.order(String word)` | This public method takes in Strings `"in"`, `"pre"`, and `"post"` to determine how to order a list for a binary tree.
-`.preorder()` | This private method is a helper method for `.order()` and takes in a root node to search a tree and return a list with the values order in pre-order fashion.
-`.inorder()` | This private method is a helper method for `.order()` and takes in a root node to search a tree and return a list with the values order in an in-order fashion.
-`.postorder()` | This private method is a helper method for `.order()` and takes in a root node to search a tree and return a list with the values order in post-order fashion.
+Method | Description | Time | Space
+------ | ----------- | ---- | ----
+`.order(String word)` | This public method takes in Strings `"in"`, `"pre"`, and `"post"` to determine how to order a list for a binary tree. | O(1) | O(1)
+`.preorder()` | This private method is a helper method for `.order()` and takes in a root node to search a tree and return a list with the values order in pre-order fashion. | O(n) | O(n)
+`.inorder()` | This private method is a helper method for `.order()` and takes in a root node to search a tree and return a list with the values order in an in-order fashion. | O(n) | O(n)
+`.postorder()` | This private method is a helper method for `.order()` and takes in a root node to search a tree and return a list with the values order in post-order fashion. | O(n) | O(n)
 
 
 ### BinarySearchTree Class extends BinaryTree
-Method | Description
----- | -----
-`.add(T value)` | This method takes in a value and adds it to the correct leaf on a binary search tree. This returns `true` if a node is added.
-`.search(T value, Node root)` | This method takes in a value and a root node to search the tree recursively for the node with the corresponding value. It then returns that node.
+Method | Description | Time | Space
+------ | ----------- | ---- | ----
+`.add(T value)` | This method takes in a value and adds it to the correct leaf on a binary search tree. This returns `true` if a node is added. | O(n) | O(log(n))
+`.search(T value, Node root)` | This method takes in a value and a root node to search the tree recursively for the node with the corresponding value. It then returns that node. | O(n) | O(log(n))
