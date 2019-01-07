@@ -1,6 +1,5 @@
 # Graphs
-[Code](../src/main/java/graph) | [Tests*](../src/test/java/graph)
-*NOTE: Tests methods should be run individually for them to pass. This is because sets do not always print in the same order and may fail because `assertEquals` is expecting exact quotes.
+[Code](../src/main/java/graph) | [Tests](../src/test/java/graph)
 
 ## The Challenge
 Implement your own Graph. The graph should be represented as an adjacency list, and should include the following methods: `addNode()`, `addEdge()`, `getNodes()`, `getNeighbors()`, `size()`.
