@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 public class Graph<T>{
 
-    public HashSet<Node<T>> nodes;
+    private HashSet<Node<T>> nodes;
 
     //Constructor Function for Graph
     public Graph(){

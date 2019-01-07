@@ -70,7 +70,8 @@ public class GraphTest {
         one.addEdge(oneNode, threeNode, 1);
         assertEquals("expect 13 to have neighbor size 2", 2, oneNode.neighbors.size());
         assertEquals("expect 'c' to have neighbor size 1", 1, threeNode.neighbors.size());
-        assertEquals("expect 13 to have contain twoNode", "[something with weight 16, c with weight 1]", oneNode.neighbors.toString());
+        assertEquals("expect 13 to have contain twoNode", true, oneNode.neighbors.toString().contains("c with weight 1"));
+        assertEquals("expect 13 to have contain twoNode", true, oneNode.neighbors.toString().contains("something with weight 16"));
         assertEquals("expect 'c' to have contain 13", "[13 with weight 1]", threeNode.neighbors.toString());
     }
 
@@ -83,21 +84,19 @@ public class GraphTest {
         graph.addEdge(two, graph.addNode(17));
         graph.addEdge(one, graph.addNode(102), 19);
         graph.addEdge(two, one, 2);
-        assertEquals("expect graph to contain things", "[Node: 2 has edge(s): \n" +
-                "[17 with weight 0, 13 with weight 2], Node: 102 has edge(s): \n" +
-                "[13 with weight 19], Node: 13 has edge(s): \n" +
-                "[2 with weight 2, 102 with weight 19], Node: 17 has edge(s): \n" +
-                "[2 with weight 0]]", graph.getNodes());
+        assertEquals("expect graph to contain things", true, graph.getNodes().contains("Node: 13 has edge(s): \n[2 with weight 2, 102 with weight 19]" ));
 
         Graph oneGraph = new Graph();
         Node oneNode = oneGraph.addNode(13);
         Node twoNode = oneGraph.addNode("something");
         Node threeNode = oneGraph.addNode('c');
-        assertEquals("expect graph to contain things", "[something, 13, c]", oneGraph.getNodes());
+        assertEquals("expect graph to contain things", true , oneGraph.getNodes().contains("13"));
+        assertEquals("expect graph to contain things", true , oneGraph.getNodes().contains("c"));
+        assertEquals("expect graph to contain things", true , oneGraph.getNodes().contains("something"));
+
+
         oneGraph.addEdge(oneNode, threeNode, 13);
-        assertEquals("expect graph to contain things", "[something, Node: 13 has edge(s): \n" +
-                "[c with weight 13], Node: c has edge(s): \n" +
-                "[13 with weight 13]]", oneGraph.getNodes());
+        assertEquals("expect graph to contain things", true, oneGraph.getNodes().contains("Node: c has edge(s): \n[13 with weight 13]"));
     }
 
     @Test
@@ -110,8 +109,11 @@ public class GraphTest {
         graph.addEdge(one, graph.addNode(102), 19);
         graph.addEdge(two, one, 2);
 
-        assertEquals("expect one to have 2 neighbors","[2 with weight 2, 102 with weight 19]", graph.getNeighbors(one));
-        assertEquals("expect two to have 1 neighbors","[17 with weight 0, 13 with weight 2]", graph.getNeighbors(two));
+
+        assertEquals("expect one to have 2 neighbors",true, graph.getNeighbors(one).contains("102 with weight 19"));
+        assertEquals("expect one to have 2 neighbors",true, graph.getNeighbors(one).contains("2 with weight 2"));
+        assertEquals("expect two to have 1 neighbors",true, graph.getNeighbors(two).contains("17 with weight 0"));
+        assertEquals("expect two to have 1 neighbors",true, graph.getNeighbors(two).contains("13 with weight 2"));
         assertEquals("expect 's' to have 1 neighbors","[]", graph.getNeighbors(graph.addNode('s')));
     }
 
