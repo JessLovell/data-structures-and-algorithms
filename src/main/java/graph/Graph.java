@@ -6,35 +6,63 @@ public class Graph<T>{
 
     public HashSet<Node<T>> nodes;
 
+    //Constructor Function for Graph
     public Graph(){
         this.nodes = new HashSet<>();
     }
 
+    //This adds a node to the graph
     public Node<T> addNode(T data){
-        // Adds a new node to the graph
-        
-        // Takes in the value of that node
-        // Returns the added node
+
+        Node node = new Node(data);
+        this.nodes.add(node);
+        return node;
     }
 
-    public void addEdge(){
-        //Adds a new edge between two nodes in the graph -
-        //  Include the ability to have a “weight” -
-        // Takes in the two nodes to be connected by the edge -
-        // Both nodes should already be in the Graph
+    //This method adds an edge between two node and returns true
+    public boolean addEdge(Node<T> one, Node<T> two){
+
+        if (this.nodes.contains(one) && this.nodes.contains(two)){
+            one.addNeighbor(two);
+            two.addNeighbor(one);
+            return true;
+        }
+        return false;
     }
 
-    public void getNodes() {
-        //Returns all of the nodes in the graph as a collection (set, list, or similar)
+    //This method adds an edge and a weight between two nodes and returns true
+    public boolean addEdge(Node<T> one, Node<T> two, int weight){
+
+        if (this.nodes.contains(one) && this.nodes.contains(two)){
+            one.addNeighbor(two, weight);
+            two.addNeighbor(one, weight);
+            return true;
+        }
+        return false;
     }
 
-    public void getNeighbors(){
+    //This method returns all the nodes in the graph as a set
+    public String getNodes() {
+
+        return this.nodes.toString();
+    }
+
+    //This method returns all the neighbors of a node and their weights
+    public String getNeighbors(Node<T> node){
+
         //Returns a collection of nodes connected to the given node
-        //    Takes in a given node
-        //    Include the weight of the connection in the returned collection
+        if (this.nodes.contains(node) && node.neighbors != null){
+            return node.neighbors.toString();
+        } else if (this.nodes.contains(node) && node.neighbors == null) {
+            return node + " has no neighbors.";
+        } else{
+            return null;
+        }
     }
 
-    public void size(){
-        //Returns the total number of nodes in the graph
+    //This method returns the number of nodes in the graph
+    public int size() {
+
+        return this.nodes.size();
     }
 }

@@ -1,11 +1,19 @@
 package graph;
 
 public class Edge<T> {
-    public T weight;
+    public int weight;
     public Node<T> node;
 
-    public Edge(T weight, Node<T> node){
-        this.weight = weight;
+    public Edge(Node<T> node){
+        this.node = node; }
+
+    public Edge(Node<T> node, int weight){
         this.node = node;
+        this.weight = weight;
+    }
+
+    public String toString(){
+
+        return this.node.data + " with weight " + this.weight;
     }
 }
