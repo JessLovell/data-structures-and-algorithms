@@ -12,4 +12,4 @@ Method | Description | Time | Space
 ## Solution
 [Code](../src/main/java/graph/Graph.java) | [Tests](../src/test/java/graph)
 
-![White Board Solution of Breadth First Graph Traversal](/assets/graph_breadth.JPG)
+![White Board Solution of Breadth First Graph Traversal](../assets/graph_breadth.JPG)

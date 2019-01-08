@@ -23,8 +23,8 @@ public class Node<T> {
         return true;
     }
 
-//    public String toString(){
-//
-//        return this.data.toString();
-//    }
+    public String toString(){
+
+        return this.data.toString();
+    }
 }

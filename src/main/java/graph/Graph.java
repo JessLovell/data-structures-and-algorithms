@@ -63,7 +63,7 @@ public class Graph<T>{
     }
 
     //This method returns a breadth-first list traversal from the input node
-    public static LinkedList<Node> breadthFirst(Node node, Graph graph){
+    public static LinkedList<Node> breadthFirst(Node node){
 
         LinkedList<Node> list = new LinkedList<>();
 

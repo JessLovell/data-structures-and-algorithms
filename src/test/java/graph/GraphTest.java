@@ -96,21 +96,20 @@ public class GraphTest {
         assertEquals("expect graph to contain things", true , oneGraph.getNodes().contains(threeNode));
     }
 
-//    @Test
-//    public void testGetNeighbors() {
-//
-//        Graph graph = new Graph();
-//        Node one = graph.addNode(13);
-//        Node two = graph.addNode(2);
-//        graph.addEdge(two, one, 2);
-//
-//
-//        assertEquals("expect one to have 2 neighbors",1, graph.getNeighbors(one).size());
-//        assertEquals("expect one to contain 'two'", two, graph.getNeighbors(one).iterator().next());
-//        assertEquals("expect two to have 1 neighbors",true, graph.getNeighbors(two));
-//        assertEquals("expect two to have 1 neighbors",true, graph.getNeighbors(two).size());
-//        assertEquals("expect 's' to have 1 neighbors","[]", graph.getNeighbors(graph.addNode('s')));
-//    }
+    @Test
+    public void testGetNeighbors() {
+
+        Graph graph = new Graph();
+        Node one = graph.addNode(13);
+        Node two = graph.addNode(2);
+
+        assertEquals("Expect no neighbors for one", 0, graph.getNeighbors(one).size());
+        assertEquals("Expect no neighbors for two", 0, graph.getNeighbors(two).size());
+
+        graph.addEdge(one, two);
+        assertEquals("Expect no neighbors for one", 1, graph.getNeighbors(one).size());
+        assertEquals("Expect no neighbors for two", 1, graph.getNeighbors(two).size());
+    }
 
     @Test
     public void testSize() {
