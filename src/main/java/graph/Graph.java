@@ -74,7 +74,6 @@ public class Graph<T>{
         Queue<Node> q = new Queue<>();
         q.enqueue(node);
         visited.add(node);
-        results.add(node);
 
         while (!q.isEmpty()){
 
