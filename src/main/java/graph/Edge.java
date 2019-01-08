@@ -16,8 +16,8 @@ public class Edge<T> {
         return this.node;
     }
 
-//    public String toString(){
-//
-//        return this.node + " with weight " + this.weight;
-//    }
+    public String toString(){
+
+        return this.node + " with weight " + this.weight;
+    }
 }

@@ -39,4 +39,14 @@ public class Queue<T> {
     public Node peek(){
         return this.front;
     }
+
+    public boolean isEmpty(){
+
+        if (this.front == null){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }

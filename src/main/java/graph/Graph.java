@@ -1,5 +1,8 @@
 package graph;
 
+import stacksAndQueues.Queue;
+
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedList;
 
@@ -63,25 +66,34 @@ public class Graph<T>{
     }
 
     //This method returns a breadth-first list traversal from the input node
-    public static LinkedList<Node> breadthFirst(Node node, Graph graph){
+    public static LinkedList<Node> breadthFirst(Node node) {
 
-        LinkedList<Node> list = new LinkedList<>();
+        LinkedList<Node> results = new LinkedList<>();
+        LinkedList<Node> visited = new LinkedList<>();
 
-        //Add the input node's neighbors
-        HashSet<Edge> neighbors = graph.getNeighbors(node);
-        for (Edge e : neighbors){
-            list.add(e.node);
-        }
+        Queue<Node> q = new Queue<>();
+        q.enqueue(node);
+        visited.add(node);
 
-        //Iterate through the list and add nodes if not in the list.
-        for (Node n : list){
-            HashSet<Edge> temp = n.neighbors;
-            for (Edge e : temp){
-                if (!temp.contains(e.node)){
-                    list.add(e.node);
+        while (!q.isEmpty()){
+
+            Node deq = q.dequeue();
+            results.add(deq);
+
+
+            ArrayList<Edge> deqNeighbors = new ArrayList();
+
+            if (deq.neighbors != null) {
+                deqNeighbors.addAll(deq.neighbors);
+                for(Edge e : deqNeighbors){
+                    if (!visited.contains(e.node)){
+                        q.enqueue(e.node);
+                        visited.add(e.node);
+                    }
                 }
             }
+
         }
-        return list;
+        return results;
     }
 }

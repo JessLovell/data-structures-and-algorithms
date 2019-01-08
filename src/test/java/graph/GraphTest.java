@@ -96,21 +96,20 @@ public class GraphTest {
         assertEquals("expect graph to contain things", true , oneGraph.getNodes().contains(threeNode));
     }
 
-//    @Test
-//    public void testGetNeighbors() {
-//
-//        Graph graph = new Graph();
-//        Node one = graph.addNode(13);
-//        Node two = graph.addNode(2);
-//        graph.addEdge(two, one, 2);
-//
-//
-//        assertEquals("expect one to have 2 neighbors",1, graph.getNeighbors(one).size());
-//        assertEquals("expect one to contain 'two'", two, graph.getNeighbors(one).iterator().next());
-//        assertEquals("expect two to have 1 neighbors",true, graph.getNeighbors(two));
-//        assertEquals("expect two to have 1 neighbors",true, graph.getNeighbors(two).size());
-//        assertEquals("expect 's' to have 1 neighbors","[]", graph.getNeighbors(graph.addNode('s')));
-//    }
+    @Test
+    public void testGetNeighbors() {
+
+        Graph graph = new Graph();
+        Node one = graph.addNode(13);
+        Node two = graph.addNode(2);
+
+        assertEquals("Expect no neighbors for one", 0, graph.getNeighbors(one).size());
+        assertEquals("Expect no neighbors for two", 0, graph.getNeighbors(two).size());
+
+        graph.addEdge(one, two);
+        assertEquals("Expect no neighbors for one", 1, graph.getNeighbors(one).size());
+        assertEquals("Expect no neighbors for two", 1, graph.getNeighbors(two).size());
+    }
 
     @Test
     public void testSize() {
@@ -150,12 +149,28 @@ public class GraphTest {
     public void testBreadthFirst(){
 
         Graph graph = new Graph();
-        Node one = graph.addNode(13);
+        Node one = graph.addNode(1);
         Node two = graph.addNode(2);
-        graph.addEdge(two, graph.addNode(17));
-        graph.addEdge(one, graph.addNode(102), 19);
+        Node three = graph.addNode(3);
+        Node four = graph.addNode(4);
+        Node five = graph.addNode(5);
+
+        graph.addEdge(two, three);
+        graph.addEdge(one, four, 5);
         graph.addEdge(two, one, 2);
 
-        Graph.breadthFirst(one, graph);
+        assertTrue("Start from 1: [1, 4, 2, 3] or [1, 2, 4, 3]", Graph.breadthFirst(one).toString().contains("[1, 4, 2, 3]") || Graph.breadthFirst(one).toString().contains("[1, 2, 4, 3]"));
+
+        graph.addEdge(five, three);
+        graph.addEdge(five, four);
+        Node six = graph.addNode(6);
+        graph.addEdge(four, six);
+
+//        1 - 4 -- 6
+//        |     \
+//        2 - 3 - 5
+
+        assertTrue("Start from 1: [1, 4, 2, 6, 5, 3] or [1, 2, 4, 6, 5, 3]", Graph.breadthFirst(one).toString().contains("6, 5, 3") || Graph.breadthFirst(one).toString().contains("6"));
+        assertEquals("Start from 3", "[3, 2, 5, 1, 4, 6]", Graph.breadthFirst(three).toString());
     }
 }
