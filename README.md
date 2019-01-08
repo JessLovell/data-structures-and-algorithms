@@ -27,3 +27,4 @@ This repo contains my practice and adventures in Data Structures and Algorithms.
 
 ## Week 6 | Graphs
 - [Graphs](/otherReadMes/graph.md)
+- [Breadth-First Traversal](/otherReadMes/graph-part-2.md)
