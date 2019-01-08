@@ -155,6 +155,6 @@ public class GraphTest {
         graph.addEdge(one, graph.addNode(102), 19);
         graph.addEdge(two, one, 2);
 
-        Graph.breadthFirst(one, graph);
+        Graph.breadthFirst(one);
     }
 }
