@@ -12,8 +12,12 @@ public class Edge<T> {
         this.weight = weight;
     }
 
-    public String toString(){
-
-        return this.node.data + " with weight " + this.weight;
+    public Node<T> getNode(){
+        return this.node;
     }
+
+//    public String toString(){
+//
+//        return this.node + " with weight " + this.weight;
+//    }
 }

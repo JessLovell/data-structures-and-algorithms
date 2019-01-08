@@ -1,6 +1,7 @@
 package graph;
 
 import java.util.HashSet;
+import java.util.LinkedList;
 
 public class Graph<T>{
 
@@ -42,27 +43,45 @@ public class Graph<T>{
     }
 
     //This method returns all the nodes in the graph as a set
-    public String getNodes() {
+    public HashSet<Node<T>> getNodes() {
 
-        return this.nodes.toString();
+        return this.nodes;
     }
 
     //This method returns all the neighbors of a node and their weights
-    public String getNeighbors(Node<T> node){
+    public HashSet<Edge> getNeighbors(Node<T> node){
 
         //Returns a collection of nodes connected to the given node
-        if (this.nodes.contains(node) && node.neighbors != null){
-            return node.neighbors.toString();
-        } else if (this.nodes.contains(node) && node.neighbors == null) {
-            return node + " has no neighbors.";
-        } else{
-            return null;
-        }
+        return node.neighbors;
+
     }
 
     //This method returns the number of nodes in the graph
     public int size() {
 
         return this.nodes.size();
+    }
+
+    //This method returns a breadth-first list traversal from the input node
+    public static LinkedList<Node> breadthFirst(Node node, Graph graph){
+
+        LinkedList<Node> list = new LinkedList<>();
+
+        //Add the input node's neighbors
+        HashSet<Edge> neighbors = graph.getNeighbors(node);
+        for (Edge e : neighbors){
+            list.add(e.node);
+        }
+
+        //Iterate through the list and add nodes if not in the list.
+        for (Node n : list){
+            HashSet<Edge> temp = n.neighbors;
+            for (Edge e : temp){
+                if (!temp.contains(e.node)){
+                    list.add(e.node);
+                }
+            }
+        }
+        return list;
     }
 }

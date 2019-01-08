@@ -23,11 +23,8 @@ public class Node<T> {
         return true;
     }
 
-    public String toString(){
-
-        if (this.neighbors.size() != 0){
-            return "Node: " + this.data + " has edge(s): \n" + this.neighbors.toString();
-        }
-        return this.data.toString();
-    }
+//    public String toString(){
+//
+//        return this.data.toString();
+//    }
 }
