@@ -13,6 +13,7 @@ public class GetEdge {
         int cost = 0;
         String result = "False";
         Node node = null;
+        boolean direct = false;
 
         //find the start node in the graph
         for (Node n : (HashSet<Node>)map.getNodes()){
@@ -33,7 +34,15 @@ public class GetEdge {
                     cost += e.weight;
                     node = e.node;
                     result = "True, $" + cost;
+                    direct = true;
                 }
+            }
+
+            //got help here from Evan
+            if (direct){
+                direct = false;
+            } else {
+                return "False";
             }
         }
 

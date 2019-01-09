@@ -6,8 +6,10 @@
 ## Approach & Efficiency
 My approach was to create a new class `FlightFinder` and loop through the input array. Find a node in the array and check to see if the next element in the array is in the set of neighbors for the node.
 
+### GetEdge Class
 Method | Description | Time | Space
 ---- | ---- | ---- | ----
+
 
 ## Solution
 [Code]() | [Test]()
