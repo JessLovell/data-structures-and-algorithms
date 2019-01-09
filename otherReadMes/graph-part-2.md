@@ -7,7 +7,8 @@ My original apporach was to loop though the list of neighbor nodes of the input 
 
 Method | Description | Time | Space
 --- | ---- | ---- | ----
-`Graph.breadthFirst(Node n, Graph g)` | This method returns a breadth-first list of nodes from a graph traversal. | *O(n<sup>2</sup>)* | *O(n)*
+`Graph.breadthFirst(Node n)` | This method returns a breadth-first list of nodes from a graph traversal. | *O(dn)* | *O(n)*
+**d* = degree of the node (neighbors)
 
 ## Solution
 [Code](../src/main/java/graph/Graph.java) | [Tests](../src/test/java/graph)
