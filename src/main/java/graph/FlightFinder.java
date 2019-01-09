@@ -22,7 +22,7 @@ public class FlightFinder {
             for(Node n : (HashSet<Node>) map.getNodes()){
                 if(this.cities[i] == n.data & i != this.cities.length - 1){
                 } else{
-                    
+
                 }
             }
         }
