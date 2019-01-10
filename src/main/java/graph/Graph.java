@@ -96,7 +96,7 @@ public class Graph<T>{
         return results;
     }
 
-    //This method returns a pre-order depth-first traversel from the input node
+    //This method returns a pre-order depth-first traversal from the input node
     public static LinkedList<Node> depthFirst(Node node) {
 
         LinkedList<Node> results = new LinkedList<>();
@@ -109,12 +109,13 @@ public class Graph<T>{
         while (!s.isEmpty()){
 
             Node temp = s.pop();
+            results.add(temp);
 
             if (temp.neighbors != null){
                 for (Edge e: (HashSet<Edge>) temp.neighbors){
                     if (!visited.contains(e.node)){
                         s.push(e.node);
-                        visited.add(node);
+                        visited.add(e.node);
                     }
                 }
             }
