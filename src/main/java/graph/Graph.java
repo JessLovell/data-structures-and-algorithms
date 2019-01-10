@@ -1,6 +1,7 @@
 package graph;
 
 import stacksAndQueues.Queue;
+import stacksAndQueues.Stack;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -80,7 +81,6 @@ public class Graph<T>{
             Node deq = q.dequeue();
             results.add(deq);
 
-
             ArrayList<Edge> deqNeighbors = new ArrayList();
 
             if (deq.neighbors != null) {
@@ -92,7 +92,32 @@ public class Graph<T>{
                     }
                 }
             }
+        }
+        return results;
+    }
 
+    //This method returns a pre-order depth-first traversel from the input node
+    public static LinkedList<Node> depthFirst(Node node) {
+
+        LinkedList<Node> results = new LinkedList<>();
+        HashSet<Node> visited = new HashSet<>();
+
+        Stack<Node> s = new Stack<>();
+        s.push(node);
+        visited.add(node);
+
+        while (!s.isEmpty()){
+
+            Node temp = s.pop();
+
+            if (temp.neighbors != null){
+                for (Edge e: (HashSet<Edge>) temp.neighbors){
+                    if (!visited.contains(e.node)){
+                        s.push(e.node);
+                        visited.add(node);
+                    }
+                }
+            }
         }
         return results;
     }
