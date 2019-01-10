@@ -12,6 +12,6 @@ Method | Description | Time | Space
 `.flightItinerary(String[] arr, Graph map)` | This method returns a T/F String about direct flight maps. |*O(n<sup>2</sup>)* | *O(n)*
 
 ## Solution
-[Code]() | [Test]()
+[Code](../src/main/java/graph/getEdge/GetEdge.java) | [Test](../src/main/test/graph/getEdge/GraphTest.java)
 
 ![White Board Solution to Flight Finder](../assets/graph_flight.JPG)
