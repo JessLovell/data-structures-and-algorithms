@@ -8,10 +8,11 @@ My approach for this challenge was to add the root node to a stack. While my sta
 ### Graph Class
 Method | Description | Time | Space
 ---- | ---- | ---- | ----
-`Graph.depthFirst(Node n)` | This method returns a pre-ordered-depth-first list of nodes from a graph traversal. | *O(dn)* | *O(n)*
+`Graph.depthFirst(Node n)` | This method returns a pre-ordered-depth-first list of nodes from a graph traversal. | *O(dn)* | *O(n)* 
+
 **d* = degree of the node (neighbors)
 
 ## Solution
-[Code](../src/main/java/graph/Graph.java) | [Tests](../src/test/java/graph/Graph.java)
+[Code](../src/main/java/graph/Graph.java) | [Tests](../src/test/java/graph/GraphTest.java)
 
 ![White Board for Depth First](../assets/graph_depth.JPG)
