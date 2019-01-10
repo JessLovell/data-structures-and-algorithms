@@ -47,4 +47,13 @@ public class Stack<T> {
         }
         System.out.println();
     }
+
+    public boolean isEmpty(){
+        if (this.top == null){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }

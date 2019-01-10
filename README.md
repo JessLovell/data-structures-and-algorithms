@@ -29,3 +29,4 @@ This repo contains my practice and adventures in Data Structures and Algorithms.
 - [Graphs](/otherReadMes/graph.md)
 - [Breadth-First Traversal](/otherReadMes/graph-part-2.md)
 - [Flight Itinerary](/otherReadMes/graph-part-3.md)
+- [Pre-order Depth-First Traversal](/otherReadMes/graph-part-4.md)

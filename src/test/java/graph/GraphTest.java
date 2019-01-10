@@ -173,4 +173,51 @@ public class GraphTest {
         assertTrue("Start from 1: [1, 4, 2, 6, 5, 3] or [1, 2, 4, 6, 5, 3]", Graph.breadthFirst(one).toString().contains("6, 5, 3") || Graph.breadthFirst(one).toString().contains("6"));
         assertEquals("Start from 3", "[3, 2, 5, 1, 4, 6]", Graph.breadthFirst(three).toString());
     }
+
+    @Test
+    public void testDepthFirst(){
+        Graph graph = new Graph();
+        Node one = graph.addNode(1);
+        Node two = graph.addNode(2);
+        Node three = graph.addNode(3);
+        Node four = graph.addNode(4);
+        Node five = graph.addNode(5);
+        Node six = graph.addNode(6);
+
+        graph.addEdge(two, three);
+        graph.addEdge(one, four, 5);
+        graph.addEdge(two, one, 2);
+        graph.addEdge(five, three);
+        graph.addEdge(five, four);
+        graph.addEdge(four, six);
+
+
+        Graph abc = new Graph();
+        Node a = abc.addNode("a");
+        Node b = abc.addNode("b");
+        Node c = abc.addNode("c");
+        Node d = abc.addNode("d");
+        Node e = abc.addNode("e");
+        Node f = abc.addNode("f");
+        Node g = abc.addNode("g");
+        Node h = abc.addNode("h");
+
+        abc.addEdge(a, b);
+        abc.addEdge(a, d);
+        abc.addEdge(b, c);
+        abc.addEdge(c, g);
+        abc.addEdge(e, d);
+        abc.addEdge(h, f);
+        abc.addEdge(h, d);
+        abc.addEdge(f, d);
+
+        assertEquals("Expect to start with 'one'",  one, Graph.depthFirst(one).getFirst());
+        assertEquals("Expect to have size 6", 6, Graph.depthFirst(one).size());
+        assertEquals("Expect to start with 'g'",  g, Graph.depthFirst(g).getFirst());
+        assertEquals("Expect to have size 8", 8, Graph.depthFirst(g).size());
+        assertEquals("Expect 'c'",  c, Graph.depthFirst(g).remove(1));
+        assertEquals("Expect 'b'",  b, Graph.depthFirst(g).remove(2));
+
+
+    }
 }
