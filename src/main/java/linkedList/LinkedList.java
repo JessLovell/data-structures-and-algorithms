@@ -1,32 +1,32 @@
 package linkedList;
 
-public class LinkedList {
-    private Node head;
-    private Node current;
+public class LinkedList<T> {
+    private Node<T> head;
+    private Node<T> current;
 
     public LinkedList(){
         this.head = null;
     }
 
     // this method will insert any value at the head of a linked list
-    public void insert(int value) {
+    public void insert(T value) {
 
         //create a node & find the head pointer
-        Node newNode =  new Node (value, this.head);
+        Node<T> newNode =  new Node (value, this.head);
 
         //set head to point at new node
         this.head = newNode;
     }
 
     // this method checks to see if a value is in a linked list.
-    public boolean includes(int value) {
+    public boolean includes(T value) {
 
         //find the head
-        Node current  = this.head;
+        Node<T> current  = this.head;
 
         //check each node value in the list against input value
         while (current != null) {
-            if (value == current.data) {
+            if (current.data.equals(value)) {
                 return true;
             } else {
                 current = current.next;
@@ -39,7 +39,7 @@ public class LinkedList {
     public void print(){
 
         //find head
-        Node current = this.head;
+        Node<T> current = this.head;
 
         //output all values of the list
         while (current != null) {
@@ -50,13 +50,13 @@ public class LinkedList {
     }
 
     // this method takes in a value and inserts it at the end of the list
-    public void append(int value) {
+    public void append(T value) {
 
-        Node current = this.head;
+        Node<T> current = this.head;
 
         while (current != null) {
             if (current.next == null) {
-                Node newNode = new Node(value, current.next);
+                Node<T> newNode = new Node(value, current.next);
                 current.next = newNode;
                 return;
             } else {
@@ -66,12 +66,12 @@ public class LinkedList {
     }
 
     //This method takes in a value to insert before a specific value in the list
-    public void insertBefore(int targetValue, int newValue){
-        Node current = this.head;
+    public void insertBefore(T targetValue, T newValue){
+        Node<T> current = this.head;
 
         while (current != null){
             if ((current.next).data == targetValue){
-                Node newNode = new Node(newValue, current.next);
+                Node<T> newNode = new Node(newValue, current.next);
                 current.next = newNode;
                 return;
             } else {
@@ -81,12 +81,12 @@ public class LinkedList {
     }
 
     // this method takes in a value to insert after a specific value in the list
-    public void insertAfter(int targetValue, int newValue) {
-        Node current = this.head;
+    public void insertAfter(T targetValue, T newValue) {
+        Node<T> current = this.head;
 
         while (current != null){
             if (current.data == targetValue){
-                Node newNode = new Node(newValue, current.next);
+                Node<T> newNode = new Node(newValue, current.next);
                 current.next = newNode;
                 return;
             } else {
@@ -98,7 +98,7 @@ public class LinkedList {
     // this method takes in a value to insert from the end - value position in the list
     public int kFromEnd(int k) {
 
-        Node current = this.head;
+        Node<T> current = this.head;
         int size = 0;
         while (current != null) {
             size++;
@@ -113,7 +113,7 @@ public class LinkedList {
             current = this.head;
             for (int i = 0; i < deltaK; i++) {
                 if (i == deltaK - 1) {
-                    return current.data;
+//                    return current.data;
                 } else {
                     current = current.next;
                 }

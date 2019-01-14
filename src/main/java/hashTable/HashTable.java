@@ -5,12 +5,13 @@ import java.util.LinkedList;
 
 public class HashTable<T> {
 
-    public LinkedList[] table;
+    public LinkedList<Node<T>>[] buckets;
 
     public HashTable(){
-        this.table = new LinkedList[16];
+        this.buckets = new LinkedList[16];
     }
 
+    //This method will turn the key into an index value
     protected int hashKey(String key){
 
         //get char code sum
@@ -21,11 +22,12 @@ public class HashTable<T> {
 
         //reduce to index in array length
         index *= 937;
-        index = index % this.table.length;
+        index = index % this.buckets.length;
 
         return index;
     }
 
+    //This method adds a node to the hashtable
     public Node<T> add(String key, T value){
 
         Node<T> nodeToAdd = new Node<>(key, value);
@@ -34,7 +36,10 @@ public class HashTable<T> {
         int index = hashKey(key);
 
         //add the node to table with index from hash
-        this.table[index].add(nodeToAdd);
+        if (this.buckets[index] == null){
+            this.buckets[index] = new LinkedList<>();
+            this.buckets[index].add(nodeToAdd);
+        }
 
         return nodeToAdd;
     }
