@@ -12,7 +12,7 @@ public class HashTable<T> {
     }
 
     //This method will turn the key into an index value
-    protected int hashKey(String key){
+    public int getHash(String key){
 
         //get char code sum
         int index = 0;
@@ -33,7 +33,7 @@ public class HashTable<T> {
         Node<T> nodeToAdd = new Node<>(key, value);
 
         //hash the key
-        int index = hashKey(key);
+        int index = getHash(key);
 
         //add the node to table with index from hash
         if (this.buckets[index] == null){
@@ -42,5 +42,32 @@ public class HashTable<T> {
         }
 
         return nodeToAdd;
+    }
+
+    //This method returns the value of a key
+    public T find(String key){
+
+        int index = getHash(key);
+        if (this.buckets[index] != null) {
+            for (Node n : this.buckets[index]){
+                if (this.buckets[index].peek().key == key) {
+                    return this.buckets[index].peek().value;
+                }
+            }
+        }
+        return null;
+    }
+
+    public boolean contains(String key){
+
+        int index = getHash(key);
+        if (this.buckets[index] != null) {
+            for (Node n : this.buckets[index]){
+                if (this.buckets[index].peek().key == key) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
