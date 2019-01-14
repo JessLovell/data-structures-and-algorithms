@@ -1,5 +1,5 @@
 # Hash Tables
-[Code](../src/main/java/hashTable) | [Test](../src/main/java/hashTable)
+[Code](../src/main/java/hashTable) | [Test](../src/test/java/hashTable)
 
 ## The Challenge
 Implement a Hashtable with the following capabilities `add`, `find`, `contains`, `getHash`.
