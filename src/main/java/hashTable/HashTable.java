@@ -30,16 +30,15 @@ public class HashTable<T> {
     //This method adds a node to the hashtable
     public Node<T> add(String key, T value){
 
-        Node<T> nodeToAdd = new Node<>(key, value);
-
         //hash the key
         int index = getHash(key);
 
         //add the node to table with index from hash
+        Node<T> nodeToAdd = new Node<>(key, value);
         if (this.buckets[index] == null){
             this.buckets[index] = new LinkedList<>();
-            this.buckets[index].add(nodeToAdd);
         }
+        this.buckets[index].add(nodeToAdd);
 
         return nodeToAdd;
     }

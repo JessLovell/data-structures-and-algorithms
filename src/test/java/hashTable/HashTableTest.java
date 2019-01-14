@@ -21,10 +21,12 @@ public class HashTableTest {
 
         HashTable test = new HashTable();
         Node first = test.add("Key", "value");
+        Node second = test.add("Expect", "Some stuff in here");
 
         assertEquals("Node to be returned with value", "value",first.value);
         assertEquals("Node to be returned with Key", "Key",first.key);
-        assertTrue("Node to be returned with value", test.buckets[1].contains(first));
+        assertTrue("Node to be in the Linked List at bucket 1", test.buckets[1].contains(first));
+        assertTrue("Node to in Linked List at bucket 1", test.buckets[1].contains(second));
     }
 
     @Test
@@ -34,6 +36,7 @@ public class HashTableTest {
         Node second = test.add("Lovell", 12);
 
         assertEquals("Expect to have 12 returned for Lovell", 12, test.find("Lovell"));
+        assertEquals("Expect 'Lovell' to be returned for Jessica", "Lovell", test.find("Jessica"));
         assertEquals("Expect null for Amber", null, test.find("Amber"));
     }
 
@@ -46,7 +49,7 @@ public class HashTableTest {
         assertTrue("Expect True for 'Jessica'", test.contains("Jessica"));
         assertTrue("Expect True for 'Lovell'", test.contains("Lovell"));
         assertFalse("Expect True for sdf", test.contains("sdf"));
-
+        assertFalse("Expect True for 12", test.contains("12"));
 
     }
 }
