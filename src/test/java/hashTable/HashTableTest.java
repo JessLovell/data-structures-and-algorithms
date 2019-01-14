@@ -1,10 +1,28 @@
 package hashTable;
 
+import java.util.LinkedList;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class HashTableTest {
+
+    @Test public void testConstructor(){
+
+        HashTable test = new HashTable();
+        HashTable testTwo = new HashTable();
+
+        assertEquals("Should have 16 buckets", 16, test.buckets.length);
+        assertEquals("Should have 16 buckets", 16, testTwo.buckets.length);
+
+        //expect each point in the array to be null
+        for(int i = 0; i <test.buckets.length; i++){
+            assertEquals("i = " + i + ", expect to be null", null, test.buckets[i]);
+            assertEquals("i = " + i + ", expect to be null", null, testTwo.buckets[i]);
+
+        }
+
+    }
 
     @Test public void testGetHash(){
 
