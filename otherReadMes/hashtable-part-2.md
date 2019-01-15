@@ -12,4 +12,4 @@ Method | Description | Time | Space
 ## Solution
 [Code](../src/main/java/hashTable/repeatedWord) | [Test](../src/test/java/hashTable/repeatedWord)
 
-![White Board Image of Repeated Word](../assests/hashtable_repeated_word.JPG)
+![White Board Image of Repeated Word](../assets/hashtable_repeated_word.JPG)
