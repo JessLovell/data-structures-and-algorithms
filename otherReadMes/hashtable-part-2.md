@@ -7,7 +7,7 @@ My approach was to split the string by spaces and commas then put each word into
 
 Method | Description | Time | Space
 ---- | ---- | ---- | ----
-`repeatedWord(String book)` | This method returns the first repeated word | `O(n)` | `O(n*n)`
+`repeatedWord(String book)` | This method returns the first repeated word | `O(n)` | `O(n)`
 
 ## Solution
 [Code](../src/main/java/hashTable/repeatedWord) | [Test](../src/test/java/hashTable/repeatedWord)
