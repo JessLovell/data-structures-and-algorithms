@@ -35,6 +35,7 @@ public class HashTable<T> {
 
         //add the node to table with index from hash
         Node<T> nodeToAdd = new Node<>(key, value);
+
         if (this.buckets[index] == null){
             this.buckets[index] = new LinkedList<>();
         }

@@ -40,11 +40,19 @@ public class HashTableTest {
         HashTable test = new HashTable();
         Node first = test.add("Key", "value");
         Node second = test.add("Expect", "Some stuff in here");
+        Node third = test.add("jkdfedf", "Some stuff in here");
+        Node fourth = test.add("Expect", "Some stuff in here");
+
 
         assertEquals("Node to be returned with value", "value",first.value);
         assertEquals("Node to be returned with Key", "Key",first.key);
         assertTrue("Node to be in the Linked List at bucket 1", test.buckets[1].contains(first));
         assertTrue("Node to in Linked List at bucket 1", test.buckets[1].contains(second));
+        assertTrue("Node to in Linked List at bucket 1", test.buckets[1].contains(fourth));
+        assertTrue("Node to in Linked List at bucket 1", test.buckets[1].contains(second));
+        assertTrue("Node to in Linked List at bucket 1", test.buckets[1].contains(first));
+        assertEquals("Node to in Linked List at bucket 1", test.buckets[1]);
+
     }
 
     @Test
@@ -68,6 +76,15 @@ public class HashTableTest {
         assertTrue("Expect True for 'Lovell'", test.contains("Lovell"));
         assertFalse("Expect True for sdf", test.contains("sdf"));
         assertFalse("Expect True for 12", test.contains("12"));
+
+        HashTable test2 = new HashTable();
+        Node first2 = test2.add("Key", "value");
+        Node second2 = test2.add("Expect", "Some stuff in here");
+        Node third2 = test2.add("jkdfedf", "other");
+        Node fourth2 = test2.add("Expect", "stuff");
+
+        assertTrue(test2.contains("Key"));
+        assertTrue(test2.contains("Expect"));
 
     }
 }
