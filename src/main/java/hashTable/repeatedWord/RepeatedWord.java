@@ -1,6 +1,6 @@
 package hashTable.repeatedWord;
 
-import hashTable.HashTable;
+import java.util.HashSet;
 
 public class RepeatedWord {
 
@@ -8,16 +8,15 @@ public class RepeatedWord {
     public static String repeatedWord(String book){
 
         //Split the string by the spaces
-        String[] words = book.split("\\s+");
-        HashTable wordsInABook = new HashTable();
+        String[] words = book.toLowerCase().split("\\s+");
+        HashSet wordsInABook = new HashSet();
+
         for (int i = 0; i < words.length; i++){
-            System.out.println(words[i] + " " + wordsInABook.contains(words[i]));
-            if (wordsInABook.contains(words[i]) == false){
-                wordsInABook.add(words[i], 1);
+            if (!wordsInABook.contains(words[i])){
+                wordsInABook.add(words[i]);
             } else {
                 return words[i];
             }
-            System.out.println(words[i] + " " + wordsInABook.contains(words[i]));
         }
         return "No repeated words";
     }
