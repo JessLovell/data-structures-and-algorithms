@@ -15,7 +15,7 @@ public class HashTable<T> {
     public int getHash(String key){
 
         //get char code sum
-        int index = 0;
+        long index = 0;
         for (char c : key.toCharArray()){
             index += (int) c;
         }
@@ -24,7 +24,7 @@ public class HashTable<T> {
         index *= 937;
         index = index % this.buckets.length;
 
-        return index;
+        return (int) index;
     }
 
     //This method adds a node to the hashtable
