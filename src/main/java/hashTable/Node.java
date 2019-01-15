@@ -9,6 +9,10 @@ public class Node<T> {
         this.key = key;
         this.value = value;
     }
+
+    public String toString() {
+        return this.key + ": " + this.value;
+    }
 }
 
 
