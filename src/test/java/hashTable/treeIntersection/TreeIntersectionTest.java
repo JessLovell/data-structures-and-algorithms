@@ -1,6 +1,5 @@
 package hashTable.treeIntersection;
 
-import apple.laf.JRSUIUtils;
 import org.junit.Test;
 import tree.BinaryTree;
 import tree.Node;
