@@ -30,7 +30,7 @@ public class BinaryTree<T> {
         return list;
     }
      //This method pre-orders the tree by root, left, right.
-    private List preOrder(List<T> list, Node<T> node) {
+    private List<T> preOrder(List<T> list, Node<T> node) {
 
         list.add(node.data);
 
@@ -111,15 +111,5 @@ public class BinaryTree<T> {
             max = rightMax;
         }
         return max;
-    }
-
-    public HashSet<T> toSet(){
-
-        HashSet setOfNodes = new HashSet();
-        List<Node> nodes = order("pre");
-        for (Node n : (Node[]) nodes.toArray()){
-            setOfNodes.add(n.data);
-        }
-        return setOfNodes;
     }
 }
