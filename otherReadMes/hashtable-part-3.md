@@ -7,9 +7,10 @@ My approach was to create a `HashSet` for each `Binary Tree` and the intersectio
 
 Method | Description | Time | Space
 --- | --- | ---- | ----
-
+`.intersection(BinaryTree one, BinaryTree two)` | This returns the set of values in both Binary Trees. | `O(n)` | `O(n)`
+`.toSet(BinaryTree input)` | This method returns a BinaryTree traversal into a Set. | `O(n)` | `O(n)`
 
 ## The Solution
-[Code]()| [Test]()
+[Code](../src/main/java/hashTable/treeIntersection) | [Test](../src/test/java/hashTable/treeIntersection)
 
 ![White Board Solution](../assets/hashtable_intersection.JPG)
