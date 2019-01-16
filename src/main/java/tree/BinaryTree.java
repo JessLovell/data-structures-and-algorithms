@@ -3,6 +3,7 @@ package tree;
 import stacksAndQueues.Queue;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class BinaryTree<T> {
@@ -110,5 +111,15 @@ public class BinaryTree<T> {
             max = rightMax;
         }
         return max;
+    }
+
+    public HashSet<T> toSet(){
+
+        HashSet setOfNodes = new HashSet();
+        List<Node> nodes = order("pre");
+        for (Node n : (Node[]) nodes.toArray()){
+            setOfNodes.add(n.data);
+        }
+        return setOfNodes;
     }
 }

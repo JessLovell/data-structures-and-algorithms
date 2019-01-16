@@ -34,3 +34,4 @@ This repo contains my practice and adventures in Data Structures and Algorithms.
 ## Week 7 | HashTables
 - [HashTables](/otherReadMes/hashTable.md)
 - [Repeated Word](/otherReadMes/hashtable-part-2.md)
+- [Intersection of 2 Trees](/otherReadMes/hashtable-part-3.md)
