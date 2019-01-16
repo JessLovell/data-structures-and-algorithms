@@ -3,6 +3,7 @@ package tree;
 import stacksAndQueues.Queue;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class BinaryTree<T> {
@@ -29,7 +30,7 @@ public class BinaryTree<T> {
         return list;
     }
      //This method pre-orders the tree by root, left, right.
-    private List preOrder(List<T> list, Node<T> node) {
+    private List<T> preOrder(List<T> list, Node<T> node) {
 
         list.add(node.data);
 
