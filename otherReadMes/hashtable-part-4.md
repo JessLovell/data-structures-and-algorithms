@@ -11,4 +11,4 @@ Method | Description | Time | Space
 ## Solution
 [Code](../src/main/java/hashTable/leftJoin) | [Test](../src/test/java/hashTable/leftJoin)
 
-![Whiteboard Solution]()
+![Whiteboard Solution](../assets/hashtable_left_join.JPG)
