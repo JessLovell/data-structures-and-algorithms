@@ -35,4 +35,4 @@ This repo contains my practice and adventures in Data Structures and Algorithms.
 - [HashTables](/otherReadMes/hashTable.md)
 - [Repeated Word](/otherReadMes/hashtable-part-2.md)
 - [Intersection of 2 Trees](/otherReadMes/hashtable-part-3.md)
-- [Left Join](/otherReadMes/hashtalbe-part-4.md)
+- [Left Join](/otherReadMes/hashtable-part-4.md)
