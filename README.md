@@ -36,3 +36,6 @@ This repo contains my practice and adventures in Data Structures and Algorithms.
 - [Repeated Word](/otherReadMes/hashtable-part-2.md)
 - [Intersection of 2 Trees](/otherReadMes/hashtable-part-3.md)
 - [Left Join](/otherReadMes/hashtable-part-4.md)
+
+## Week 8 | Sorting
+- [Insertion Sort](/otherReadMes/sorting-insert.md)
