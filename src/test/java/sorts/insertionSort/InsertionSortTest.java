@@ -1,8 +1,6 @@
 package sorts.insertionSort;
 
 import org.junit.Test;
-import sorts.sorting.insertionSort.InsertionSort;
-
 import static org.junit.Assert.*;
 
 public class InsertionSortTest {
@@ -29,5 +27,21 @@ public class InsertionSortTest {
 
             assertEquals("input should be " +  threeSorted[i], threeSorted[i], InsertionSort.insertionSort(three)[i]);
         }
+
+        int[] four = new int[]{8,8,8,8,8,8,8,8,8,8,1,9};
+        int[] fourSorted = new int[]{1,8,8,8,8,8,8,8,8,8,8,9};
+
+        for (int i = 0; i < three.length; i++){
+
+            assertEquals("input should be " +  fourSorted[i], fourSorted[i], InsertionSort.insertionSort(four)[i]);
+        }
+
+        assertEquals("Expect that one has same length as returned array", one.length, InsertionSort.insertionSort(one).length);
+        assertEquals("Expect that two has same length as returned array", two.length, InsertionSort.insertionSort(two).length);
+        assertEquals("Expect that three has same length as returned array", three.length, InsertionSort.insertionSort(three).length);
+        assertEquals("Expect that four has same length as returned array", four.length, InsertionSort.insertionSort(four).length);
+
+        int[] five = new int[]{};
+        assertEquals("Expect nothing for empty array", five.length, InsertionSort.insertionSort(five).length);
     }
 }
