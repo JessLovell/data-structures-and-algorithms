@@ -28,8 +28,8 @@ public class InsertionSortTest {
             assertEquals("input should be " +  threeSorted[i], threeSorted[i], InsertionSort.insertionSort(three)[i]);
         }
 
-        int[] four = new int[]{8,8,8,8,8,8,8,8,8,8,1,9};
-        int[] fourSorted = new int[]{1,8,8,8,8,8,8,8,8,8,8,9};
+        int[] four = new int[]{8,8,8,-8,8,8,8,8,8,8,1,9};
+        int[] fourSorted = new int[]{-8,1,8,8,8,8,8,8,8,8,8,9};
 
         for (int i = 0; i < three.length; i++){
 
