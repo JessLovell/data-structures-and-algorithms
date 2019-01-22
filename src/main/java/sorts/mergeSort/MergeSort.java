@@ -36,6 +36,7 @@ public class MergeSort {
             return input;
         } else{
 
+            //split the input array
             int[] first = new int[input.length/2];
             int[] second = new int[input.length - first.length];
             for (int i = 0; i < input.length; i++){
@@ -45,6 +46,7 @@ public class MergeSort {
                     second[i - (input.length/2)] = input[i];
                 }
             }
+            
             return merge(mergeSort(first), mergeSort(second));
         }
     }
