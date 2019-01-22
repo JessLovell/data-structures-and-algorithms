@@ -7,4 +7,5 @@ My approach was to create a helper `merge` method to combine 2 sorted arrays.
 
 ## Solution
 [Code]() | [Test]()
-![White board of Solution](../assets/sorting-merge.md)
+
+![White board of Solution](../assets/sorts_merge.JPG)

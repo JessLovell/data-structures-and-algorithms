@@ -2,6 +2,7 @@ package sorts.mergeSort;
 
 public class MergeSort {
 
+    // This method merges two sorted arrays
     public static int[] merge(int[] one, int[] two){
 
         int[] combined = new int[one.length + two.length];
@@ -27,5 +28,24 @@ public class MergeSort {
             }
         }
         return combined;
+    }
+
+    // This method mergeSorts an array
+    public static int[] mergeSort(int[] input){
+        if (input.length < 2){
+            return input;
+        } else{
+
+            int[] first = new int[input.length/2];
+            int[] second = new int[input.length - first.length];
+            for (int i = 0; i < input.length; i++){
+                if (i < input.length/2){
+                    first[i] = input[i];
+                } else {
+                    second[i - (input.length/2)] = input[i];
+                }
+            }
+            return merge(mergeSort(first), mergeSort(second));
+        }
     }
 }

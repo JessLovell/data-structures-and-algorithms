@@ -7,38 +7,48 @@ import static org.junit.Assert.*;
 public class MergeSortTest {
 
     @Test
-    public void merge() {
+    public void testMerge() {
 
-        int[] one = new int[]{1, 2, 7, 9};
-        int[] two = new int[]{3, 4, 8};
-        int[] oneTwo = new int[]{1,2,3,4,7,8,9};
+        int[] one = {1, 2, 7, 9};
+        int[] two = {3, 4, 8};
+        int[] oneTwo = {1,2,3,4,7,8,9};
+        assertArrayEquals("Test regular array", oneTwo, MergeSort.merge(two, one));
+        assertArrayEquals("Test regular array", oneTwo, MergeSort.merge(one, two));
 
-        assertEquals(oneTwo.length, MergeSort.merge(one, two).length);
-        assertEquals(oneTwo.length, MergeSort.merge(two, one).length);
-        assertArrayEquals(oneTwo, MergeSort.merge(two, one));
-        assertArrayEquals(oneTwo, MergeSort.merge(one, two));
-
-        int[] three = new int[]{1, 3};
-        int[] four = new int[]{2};
-        int[] threeFour = new int[]{1,2,3};
+        int[] three = {1, 3};
+        int[] four = {2};
+        int[] threeFour = {1,2,3};
 
         assertEquals(threeFour.length, MergeSort.merge(three, four).length);
         assertEquals(threeFour.length, MergeSort.merge(four, three).length);
-        assertArrayEquals(threeFour, MergeSort.merge(three, four));
-        assertArrayEquals(threeFour, MergeSort.merge(four, three));
+        assertArrayEquals("Test regular array", threeFour, MergeSort.merge(three, four));
+        assertArrayEquals("Test regular array", threeFour, MergeSort.merge(four, three));
 
 
-        int[] five = new int[]{1, 3, 4, 7};
-        int[] six = new int[]{4, 6, 8};
-        int[] fiveSix = new int[]{1,3,4,4,6,7,8};
-        assertArrayEquals(fiveSix, MergeSort.merge(five, six));
-        assertArrayEquals(fiveSix, MergeSort.merge(six, five));
+        int[] five = {1, 3, 4, 7};
+        int[] six = {4, 6, 8};
+        int[] fiveSix = {1,3,4,4,6,7,8};
+        assertArrayEquals("Test duplicate values", fiveSix, MergeSort.merge(five, six));
+        assertArrayEquals("Test duplicate values", fiveSix, MergeSort.merge(six, five));
 
-        int[] seven = new int[]{};
-        int[] eight = new int[]{-1,2};
-        int[] sevenEight = new int[]{-1,2};
-        assertArrayEquals(sevenEight, MergeSort.merge(seven, eight));
-        assertArrayEquals(sevenEight, MergeSort.merge(eight, seven));
+        int[] seven = {};
+        int[] eight = {-1,2};
+        int[] sevenEight = {-1,2};
+        assertArrayEquals("Test negative and empty", sevenEight, MergeSort.merge(seven, eight));
+        assertArrayEquals("Test negative and empty", sevenEight, MergeSort.merge(eight, seven));
+    }
+
+    @Test
+    public void testMergeSort(){
+        int[] one = {4, 6, 9, 2, 8, 3, 1};
+        int[] oneSort = {1,2,3,4,6,8,9};
+        assertArrayEquals("Test regular sorted array", oneSort, MergeSort.mergeSort(one));
+
+        int[] two = {};
+        assertArrayEquals("Test an empty array", new int[]{}, MergeSort.mergeSort(two));
+
+        int[] three = {6, 4, 8, -10, 1, 6};
+        assertArrayEquals("Test with negative numbers and duplicate values", new int[]{-10, 1, 4, 6, 6, 8}, MergeSort.mergeSort(three));
 
     }
 }
