@@ -11,7 +11,7 @@ public class QuickSort {
             int pivot = input[0];
             List<Integer> smaller = new ArrayList<>();
             List<Integer> larger = new ArrayList<>();
-            for (int i = 0; i < input.length; i++){
+            for (int i = 1; i < input.length; i++){
                 if(input[i] < pivot){
                     smaller.add(input[i]);
                 } else {

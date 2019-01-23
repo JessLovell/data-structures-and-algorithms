@@ -12,6 +12,10 @@ public class QuickSortTest {
 
     @Test
     public void testQuickSort() {
+
+        int[] one = {13, 6, 1, 7, 4, 9, 19, 20};
+        assertArrayEquals("Expect to be sorted", new int[]{1,4,6,7,9,13,19,20}, QuickSort.quickSort(one));
+
     }
 
     @Test
@@ -37,7 +41,7 @@ public class QuickSortTest {
         assertTrue("Expect to be an array", QuickSort.listToArray(three) instanceof int[]);
         assertEquals("Expect to have same size", three.size(), QuickSort.listToArray(three).length);
     }
-    
+
 
     @Test
     public void testToList() {
