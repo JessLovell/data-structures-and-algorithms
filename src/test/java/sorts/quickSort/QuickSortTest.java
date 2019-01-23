@@ -14,8 +14,21 @@ public class QuickSortTest {
     public void testQuickSort() {
 
         int[] one = {13, 6, 1, 7, 4, 9, 19, 20};
-        assertArrayEquals("Expect to be sorted", new int[]{1,4,6,7,9,13,19,20}, QuickSort.quickSort(one));
+        assertArrayEquals("One: Expect to be sorted", new int[]{1,4,6,7,9,13,19,20}, QuickSort.quickSort(one));
+        int[] two = {1};
+        assertArrayEquals("Two: Expect to be sorted", new int[]{1}, QuickSort.quickSort(two));
 
+        int[] three = {};
+        assertArrayEquals("Three: Expect to be sorted", new int[]{}, QuickSort.quickSort(three));
+
+        int[] four = {2, 7, 3, -1, 3, 7, 9};
+        assertArrayEquals("Four: Expect to be sorted", new int[]{-1, 2, 3, 3, 7, 7, 9}, QuickSort.quickSort(four));
+
+        int[] five = {-1, 2, 3, 4, 5, 6, 7, 8};
+        assertArrayEquals("Five: Expect to be sorted", new int[]{-1, 2, 3, 4, 5, 6, 7, 8}, QuickSort.quickSort(five));
+
+        int[] six = {8, 7, 6, 5, 4, 3, 2, 1, 0, -1};
+        assertArrayEquals("Six: Expect to be sorted", new int[]{-1, 0, 1, 2, 3, 4, 5, 6, 7, 8}, QuickSort.quickSort(six));
     }
 
     @Test
