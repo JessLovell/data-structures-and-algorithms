@@ -7,7 +7,7 @@ My approach was to get the number of digits, `k`, and loop through the input arr
 
 Method | Description | Time | Space
 ---- | ----- | ---- | ----
-`.radixSort(int[] array)` | This method returns an array with the values sorted in ascending order. | `O(n)` | `O(n)`
+`.radixSort(int[] array)` | This method returns an array with the values sorted in ascending order. | `O(*n)` | `O(n)`
 `.listToArray(LinkedList[] list, int[] input)` | This method takes a list and returns an array. | `O(n)` | `O(n)`
 `.instantiateLL(LinkedList[] list)` | This method instantiates the `LinkedList` array | `O(n)` | `O(n)`
 
