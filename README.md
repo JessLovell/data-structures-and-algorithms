@@ -41,3 +41,4 @@ This repo contains my practice and adventures in Data Structures and Algorithms.
 - [Insertion Sort](/otherReadMes/sorting-insert.md)
 - [Merge Sort](/otherReadMes/sorting-merge.md)
 - [Quick Sort](/otherReadMes/sorting-quick.md)
+- [Radix Sort](/otherReadMes/sorting-radix.md)
