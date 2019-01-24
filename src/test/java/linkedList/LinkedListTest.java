@@ -244,4 +244,36 @@ public class LinkedListTest {
         assertEquals("2 4 2 9 2 5 2 2 2 3 1 \n", outContent.toString());
     }
 
+    @Test
+    public void testSize(){
+        LinkedList oneList = new LinkedList();
+        assertEquals("Expect size to be 0", 0, oneList.size());
+        oneList.insert(1);
+        assertEquals("Expect size to be 1", 1, oneList.size());
+        oneList.insert(3);
+        assertEquals("Expect size to be 2", 2, oneList.size());
+        oneList.insert(2);
+        assertEquals("Expect size to be 3", 3, oneList.size());
+        oneList.insert(2);
+        assertEquals("Expect size to be 4", 4, oneList.size());
+        oneList.insert(2);
+        assertEquals("Expect size to be 5", 5, oneList.size());
+        oneList.insert(2);
+        assertEquals("Expect size to be 6", 6, oneList.size());
+        oneList.insert(2);
+        assertEquals("Expect size to be 7", 7, oneList.size());
+        oneList.insert(2);
+        assertEquals("Expect size to be 8", 8, oneList.size());
+        oneList.append(12);
+        assertEquals("Expect size to be 9", 9, oneList.size());
+        oneList.append(12);
+        assertEquals("Expect size to be 10", 10, oneList.size());
+        oneList.append(12);
+        assertEquals("Expect size to be 11", 11, oneList.size());
+
+        LinkedList twoList = new LinkedList();
+        assertEquals("Expect size to be 0", 0, twoList.size());
+
+    }
+
 }
