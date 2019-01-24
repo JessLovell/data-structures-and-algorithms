@@ -2,10 +2,12 @@ package linkedList;
 
 public class LinkedList<T> {
     private Node<T> head;
+    private int size;
     private Node<T> current;
 
     public LinkedList(){
         this.head = null;
+        this.size = 0;
     }
 
     // this method will insert any value at the head of a linked list
@@ -16,6 +18,7 @@ public class LinkedList<T> {
 
         //set head to point at new node
         this.head = newNode;
+        this.size++;
     }
 
     // this method checks to see if a value is in a linked list.
@@ -58,6 +61,7 @@ public class LinkedList<T> {
             if (current.next == null) {
                 Node<T> newNode = new Node(value, current.next);
                 current.next = newNode;
+                this.size++;
                 return;
             } else {
                 current = current.next;
@@ -73,6 +77,7 @@ public class LinkedList<T> {
             if ((current.next).data == targetValue){
                 Node<T> newNode = new Node(newValue, current.next);
                 current.next = newNode;
+                this.size++;
                 return;
             } else {
                 current = current.next;
@@ -88,6 +93,7 @@ public class LinkedList<T> {
             if (current.data == targetValue){
                 Node<T> newNode = new Node(newValue, current.next);
                 current.next = newNode;
+                this.size++;
                 return;
             } else {
                 current = current.next;
@@ -146,6 +152,10 @@ public class LinkedList<T> {
 
         oneFollower.next = two.current;
         return one;
+    }
+
+    public int size(){
+        return this.size;
     }
 }
 
