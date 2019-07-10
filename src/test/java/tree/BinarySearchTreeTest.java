@@ -14,7 +14,7 @@ public class BinarySearchTreeTest {
         assertTrue("expect 12 to be added", tree.add(12));
         assertEquals("expect root to be 12", 12, tree.root.data);
         assertTrue("expect 10 to be added", tree.add(10));
-        assertEquals("expect leftchild to be 10", 10, tree.root.leftChild.data);
+        assertEquals("expect leftchild to be 10", 10, tree.root.left.data);
         assertFalse("expect false", tree.add(10));
 
         tree.add(9);

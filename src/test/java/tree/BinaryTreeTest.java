@@ -16,17 +16,17 @@ public class BinaryTreeTest {
     private final PrintStream originalOut = System.out;
     private final PrintStream originalErr = System.err;
 
-    @Before
-    public void setUpStreams() {
-        System.setOut(new PrintStream(outContent));
-        System.setErr(new PrintStream(errContent));
-    }
-
-    @After
-    public void restoreStreams() {
-        System.setOut(originalOut);
-        System.setErr(originalErr);
-    }
+//    @Before
+//    public void setUpStreams() {
+//        System.setOut(new PrintStream(outContent));
+//        System.setErr(new PrintStream(errContent));
+//    }
+//
+//    @After
+//    public void restoreStreams() {
+//        System.setOut(originalOut);
+//        System.setErr(originalErr);
+//    }
 
     @Test public void testBinaryTree() {
 
@@ -319,5 +319,64 @@ public class BinaryTreeTest {
                                 new Node(1, null, null))));
 
         assertEquals("expect to be 12", 12, BinaryTree.findMax(rootThree));
+    }
+
+    @Test public void testGetWidth(){
+        Node rootThree = new Node(12,
+                new Node(3,
+                        new Node (7,
+                                new Node(6, null, null),
+                                new Node (5, null, null)),
+                        new Node (8,
+                                new Node(4, null, null),
+                                new Node (3, null, null))),
+                new Node(11,
+                        new Node(9, null, null),
+                        new Node(10,
+                               null, null)));
+
+        System.out.println(BinaryTree.getWidth(rootThree));
+    }
+    @Test public void testPrintVertical(){
+        Node rootThree = new Node(12,
+                new Node(3,
+                        new Node (7,
+                                new Node(6, null, null),
+                                new Node (5, null, null)),
+                        new Node (8,
+                                new Node(4, null, null),
+                                new Node (1, null, null))),
+                new Node(11,
+                        new Node(9, null, null),
+                        new Node(10, null, null)));
+
+        /*
+                        12
+                    3        11
+                 7     8 9     10
+               6   5 4      1
+         */
+        BinaryTree.printVertical(rootThree);
+
+        Node rootOne = new Node(12, null, null);
+        BinaryTree.printVertical(rootOne);
+        System.out.println();
+
+
+        /*
+                  1
+                 9
+               10
+            10
+         */
+        Node rootTwo = new Node(1,
+                new Node(9,
+                        new Node(10,
+                                new Node(10, null, null)
+                                , null), null),
+                null);
+        BinaryTree.printVertical(rootTwo);
+
+
     }
 }
