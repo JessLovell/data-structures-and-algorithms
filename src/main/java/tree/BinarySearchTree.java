@@ -21,18 +21,18 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree {
                 if (current.data.equals(value)) {
                     return false;
                 } else if (current.data.compareTo(value) > 0) {
-                    if (current.leftChild == null) {
-                        current.leftChild = newNode;
+                    if (current.left == null) {
+                        current.left = newNode;
                         return true;
                     } else {
-                        current = current.leftChild;
+                        current = current.left;
                     }
                 } else {
-                    if (current.rightChild == null) {
-                        current.rightChild = newNode;
+                    if (current.right == null) {
+                        current.right = newNode;
                         return true;
                     } else {
-                        current = current.rightChild;
+                        current = current.right;
                     }
                 }
             }
@@ -49,10 +49,10 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree {
         }
 
         if (value.compareTo(node.data) < 0) {
-            return search(value, node.leftChild);
+            return search(value, node.left);
         }
         else {
-            return search(value, node.rightChild);
+            return search(value, node.right);
         }
     }
 }

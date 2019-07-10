@@ -19,11 +19,11 @@ public class FizzBuzzTree extends BinaryTree {
         else if ((Integer) n.data % 3 == 0){
             n.data = "Fizz";
         }
-         if (n.leftChild != null){
-             fizzBuzz(n.leftChild);
+         if (n.left != null){
+             fizzBuzz(n.left);
          }
-         if (n.rightChild != null){
-             fizzBuzz(n.rightChild);
+         if (n.right != null){
+             fizzBuzz(n.right);
          }
     }
 }
