@@ -2,8 +2,10 @@ package tree;
 
 
 import stacksAndQueues.Queue;
+import stacksAndQueues.Stack;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class BinaryTree<T> {
@@ -173,6 +175,47 @@ public class BinaryTree<T> {
         addtoQueue(q, idx - 1, root.left);
 
         return q;
+    }
+
+    public static void preOrder(Node root){
+
+        LinkedList s = new LinkedList();
+        s.add(root);
+        Node curr;
+
+        while (!s.isEmpty()){
+            curr = (Node) s.peek();
+
+            System.out.println(curr.data);
+            s.pop();
+
+            if (curr.left != null){
+                s.push(curr.left);
+            }
+            if (curr.right != null){
+                s.push(curr.right);
+            }
+        }
+    }
+
+    public static void inOrder(Node root){
+
+        Stack s = new Stack();
+        s.push(root);
+        Node curr;
+
+        while (!s.isEmpty()){
+            curr = (Node) s.peek().data;
+
+            if (curr.left != null) {
+                s.push(curr.left);
+            }
+
+            if (curr.right != null){
+                s.push(curr.right);
+            }
+
+        }
     }
 
 
