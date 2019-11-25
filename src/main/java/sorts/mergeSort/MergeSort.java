@@ -50,4 +50,15 @@ public class MergeSort {
             return merge(mergeSort(first), mergeSort(second));
         }
     }
+
+    public static int[] mergeAgain(int[] arr, int start, int end){
+
+        if (start - end < 0){
+            return arr;
+        }
+
+        //get mid
+
+        return arr;
+    }
 }

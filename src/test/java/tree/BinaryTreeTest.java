@@ -379,4 +379,19 @@ public class BinaryTreeTest {
 
 
     }
+
+    @Test
+    public void testPreOrderWO(){
+        Node rootThree = new Node(1,
+                                new Node(2,
+                                        new Node (4, null, null),
+                                        new Node (5, null, null)),
+                                new Node(3,
+                                        new Node(6, null, null),
+                                        new Node(7, null, null)));
+
+        BinaryTree.preOrder(rootThree); // 1 2 3 4 5 6 7
+//        BinaryTree.inOrder(rootThree); // 4 2 5 1 6 3 7
+
+    }
 }

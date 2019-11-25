@@ -20,7 +20,7 @@ public class ArrayReverse {
     }
 
     public static void reverseArrayStretch(int[] arr){
-        for (int i = 0; i < arr.length; i++){
+        for (int i = 0; i < arr.length/2; i++){
             int placeholder = arr[i];
             arr[i] = arr[arr.length - 1 - i];
             arr[arr.length - 1 - i] = placeholder;
